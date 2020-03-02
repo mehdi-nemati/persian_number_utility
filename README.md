@@ -67,6 +67,12 @@ class NumToStr extends StatelessWidget {
 
         //جدا سازی سه رقمی ارقام با علامت انتخابی - separate an integer by custom character for every three digits
         new Text(NumberUtility.seRagham(number, separator: "."))//100.092
+
+        //تبدیل اعداد انگلیسی به فارسی - convert english digit to persian digit
+        new Text(NumberUtility.seRagham(number, NumStrLanguage.Farsi))//123456789 to ۱۲۳۴۵۶۷۸۹
+
+        //تبدیل اعداد فارسی یا عربی به انگلیسی - convert persian/arabic digit to english digit
+        new Text(NumberUtility.seRagham(number, NumStrLanguage.English))//۱۲۳۴۵۶۷۸۹ to 123456789
       ],
     )));
   }
