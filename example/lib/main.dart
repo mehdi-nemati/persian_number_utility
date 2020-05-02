@@ -33,8 +33,10 @@ class NumToStr extends StatelessWidget {
         new Text(NumberUtility.toWord(number, NumStrLanguage.Farsi)),//صد هزار و نود و دو
         new Text(NumberUtility.toWord(number, NumStrLanguage.English)),//one hundred thousand ninety two
         new Text(NumberUtility.isNumeric(number).toString()),//true
-        new Text(NumberUtility.seRagham(number)),//100,092
-        new Text(NumberUtility.seRagham(number, separator: "."))//100.092
+        new Text(NumberUtility.seRagham("100092")),//100,092
+        new Text(NumberUtility.seRagham(number, separator: ".")),//100.092
+        new Text(NumberUtility.extractNumber("123456+.abc", NumStrLanguage.Farsi)),//100.092
+        new Text(NumberUtility.extractNumber("number123456اب ج -", NumStrLanguage.English))//100.092
       ],
     )));
   }

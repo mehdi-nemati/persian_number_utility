@@ -1,8 +1,8 @@
 # A Flutter Package for convert number to English or Persian (Farsi) letter
 
-A Flutter Package for convert number to English or Persian (Farsi) letter and allow you to separate an integer by comma (or other) for every three digits 
+A Flutter Package for convert number to English or Persian (Farsi) letter and allow you to separate an integer by comma (or other) for every three digits and extract number from string
 
-پکیجی برای تبدیل اعداد به حروف فارسی یا انگلیسی و همچنین برای جدا سازی سه رقمی ارقام
+پکیجی برای تبدیل اعداد به حروف فارسی یا انگلیسی ، همچنین برای جدا سازی سه رقمی ارقام و جداسازی ارقام از متن
 
 See the [Dart packages](https://pub.dev/packages/persian_number_utility).
 
@@ -18,7 +18,7 @@ Add it to your pubspec.yaml file:
 
 dependencies:
 
-persian_number_utility: ^0.0.3
+persian_number_utility: ^0.1.0
 
 ```
 
@@ -69,10 +69,14 @@ class NumToStr extends StatelessWidget {
         new Text(NumberUtility.seRagham(number, separator: "."))//100.092
 
         //تبدیل اعداد انگلیسی به فارسی - convert english digit to persian digit
-        new Text(NumberUtility.seRagham(number, NumStrLanguage.Farsi))//123456789 to ۱۲۳۴۵۶۷۸۹
+        new Text(NumberUtility.changeDigit(number, NumStrLanguage.Farsi))//123456789 to ۱۲۳۴۵۶۷۸۹
 
         //تبدیل اعداد فارسی یا عربی به انگلیسی - convert persian/arabic digit to english digit
-        new Text(NumberUtility.seRagham(number, NumStrLanguage.English))//۱۲۳۴۵۶۷۸۹ to 123456789
+        new Text(NumberUtility.changeDigit(number, NumStrLanguage.English))//۱۲۳۴۵۶۷۸۹ to 123456789
+
+        //جدا سازی اعداد از رشته - extract number from string
+        new Text(NumberUtility.extractNumber("123456+.abc", NumStrLanguage.Farsi)),//۱۲۳۴۵۶
+        new Text(NumberUtility.extractNumber("number123456اب ج -", NumStrLanguage.English))//123456
       ],
     )));
   }

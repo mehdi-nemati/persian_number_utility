@@ -9,3 +9,8 @@
 ## [0.0.3] - release.
 
 * convert english digit to persian digit.
+
+## [0.1.0] - release.
+
+* extract number from string.
+* fix example bug

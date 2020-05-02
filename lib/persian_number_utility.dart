@@ -1,4 +1,4 @@
-// Copyright (c) 2019, Mehdi Nemati.
+// Copyright (c) 2020, Mehdi Nemati.
 library persian_number_utility;
 
 class NumberUtility {
@@ -33,6 +33,7 @@ class NumberUtility {
   ///convert 123456789 to 123,456,789
   static String seRagham(String number, {String separator = ","}) {
     String str = "";
+    number = number.replaceAll(separator, '');
     for (var i = number.length; i > 0;) {
       if (i > 3)
         str = separator + number.substring(i - 3, i) + str;
@@ -64,6 +65,14 @@ class NumberUtility {
     }
     return number;
   }
+
+  ///extract number from string; abc123456789xyz to ۱۲۳۴۵۶۷۸۹  Or  ابپ۱۲۳۴۵۶۷۸۹ن to 123456789
+  static String extractNumber(String inputString, NumStrLanguage toDigit) {
+    String number = "";
+    number = inputString.replaceAll(new RegExp(r'[^0-9]'), ''); // '23'
+    return changeDigit(number,toDigit);
+  }
+
 }
 
 enum NumStrLanguage { Farsi, English }
