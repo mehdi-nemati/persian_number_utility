@@ -14,3 +14,7 @@
 
 * extract number from string.
 * fix example bug
+
+## [0.1.1] - release.
+
+* format code

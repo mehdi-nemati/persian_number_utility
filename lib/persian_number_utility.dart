@@ -70,9 +70,8 @@ class NumberUtility {
   static String extractNumber(String inputString, NumStrLanguage toDigit) {
     String number = "";
     number = inputString.replaceAll(new RegExp(r'[^0-9]'), ''); // '23'
-    return changeDigit(number,toDigit);
+    return changeDigit(number, toDigit);
   }
-
 }
 
 enum NumStrLanguage { Farsi, English }
