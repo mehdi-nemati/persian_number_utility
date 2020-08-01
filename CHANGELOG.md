@@ -18,3 +18,7 @@
 ## [0.1.1] - release.
 
 * format code
+
+## [0.1.2] - remove flutter dependency.
+
+* package didn't depend on Flutter now 
