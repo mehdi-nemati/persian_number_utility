@@ -6,7 +6,9 @@ class NumberUtility {
   static String toWord(String number, NumStrLanguage lang) {
     String _words = "";
     String _result = "";
-    if (!_ifullNumber(number)) return "";
+    if (!_ifullNumber(number)) {
+      return "";
+    }
     if (number == null || number == "") {
       return '';
     }
@@ -35,10 +37,11 @@ class NumberUtility {
     String str = "";
     number = number.replaceAll(separator, '');
     for (var i = number.length; i > 0;) {
-      if (i > 3)
+      if (i > 3) {
         str = separator + number.substring(i - 3, i) + str;
-      else
+      } else {
         str = number.substring(0, i) + str;
+      }
       i = i - 3;
     }
     return str;
@@ -47,7 +50,7 @@ class NumberUtility {
   ///convert 123456789 to ۱۲۳۴۵۶۷۸۹  Or  ۱۲۳۴۵۶۷۸۹ to 123456789
   static String changeDigit(String number, NumStrLanguage toDigit) {
     var persianNumbers = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
-    var arabicNumbers = ['٠' ,'١' ,'٢' ,'٣' ,'٤' ,'٥' ,'٦' ,'٧' ,'٨' ,'٩'];
+    var arabicNumbers = ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'];
     var enNumbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "."];
 
     if (toDigit == NumStrLanguage.English) {
@@ -208,7 +211,9 @@ class _EnWord {
       soFar = tensNames[number % 10] + soFar;
       number = number ~/ 10;
     }
-    if (number == 0) return soFar;
+    if (number == 0) {
+      return soFar;
+    }
     return numNames[number] + " hundred" + soFar;
   }
 }

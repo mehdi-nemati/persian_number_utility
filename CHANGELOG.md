@@ -26,3 +26,7 @@
 ## [0.1.3] - release.
 
 * fix bug 
+
+## [0.1.4] - release.
+
+* fix readme 
