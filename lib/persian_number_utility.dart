@@ -47,7 +47,7 @@ class NumberUtility {
   ///convert 123456789 to ۱۲۳۴۵۶۷۸۹  Or  ۱۲۳۴۵۶۷۸۹ to 123456789
   static String changeDigit(String number, NumStrLanguage toDigit) {
     var persianNumbers = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
-    var arabicNumbers = ['٩', '٨', '٧', '٦', '٥', '٤', '٣', '٢', '١', '٠'];
+    var arabicNumbers = ['٠' ,'١' ,'٢' ,'٣' ,'٤' ,'٥' ,'٦' ,'٧' ,'٨' ,'٩'];
     var enNumbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "."];
 
     if (toDigit == NumStrLanguage.English) {

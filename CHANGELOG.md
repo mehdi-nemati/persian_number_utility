@@ -22,3 +22,7 @@
 ## [0.1.2] - remove flutter dependency.
 
 * package didn't depend on Flutter now 
+
+## [0.1.3] - release.
+
+* fix bug 
