@@ -30,3 +30,7 @@
 ## [0.1.4] - release.
 
 * fix readme 
+
+## [0.1.5] - release.
+
+* fix bug 
