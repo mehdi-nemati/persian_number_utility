@@ -34,3 +34,7 @@
 ## [0.1.5] - release.
 
 * fix bug 
+
+## [0.1.6] - release.
+
+* changes in some method 

@@ -18,7 +18,7 @@ Add it to your pubspec.yaml file:
 
 dependencies:
 
-persian_number_utility: ^0.1.5
+persian_number_utility: ^0.1.6
 
 ```
 

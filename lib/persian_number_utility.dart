@@ -73,6 +73,7 @@ class NumberUtility {
   ///extract number from string; abc123456789xyz to ۱۲۳۴۵۶۷۸۹  Or  ابپ۱۲۳۴۵۶۷۸۹ن to 123456789
   static String extractNumber(String inputString, NumStrLanguage toDigit) {
     String number = "";
+    inputString = changeDigit(inputString, NumStrLanguage.English);
     number = inputString.replaceAll(RegExp(r'[^0-9]'), ''); // '23'
     return changeDigit(number, toDigit);
   }
