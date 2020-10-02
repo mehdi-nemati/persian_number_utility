@@ -38,3 +38,7 @@
 ## [0.1.6] - release.
 
 * changes in some method 
+
+## [0.2.0] - release.
+
+* Extension method added 

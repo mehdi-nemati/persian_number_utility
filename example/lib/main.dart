@@ -29,18 +29,41 @@ class NumToStr extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       mainAxisSize: MainAxisSize.max,
       children: <Widget>[
-        new Text(number),
-        new Text(NumberUtility.toWord(
-            number, NumStrLanguage.Farsi)), //صد هزار و نود و دو
-        new Text(NumberUtility.toWord(
-            number, NumStrLanguage.English)), //one hundred thousand ninety two
-        new Text(NumberUtility.isNumeric(number).toString()), //true
-        new Text(NumberUtility.seRagham("100092")), //100,092
-        new Text(NumberUtility.seRagham(number, separator: ".")), //100.092
-        new Text(NumberUtility.extractNumber(
-            "123456+.abc", NumStrLanguage.Farsi)), //100.092
-        new Text(NumberUtility.extractNumber(
-            "number123456اب ج -", NumStrLanguage.English)) //100.092
+        //تبدیل عدد به حروف فارسی - convert number to persian (farsi) letter
+        Text(NumberUtility.toWord(number, NumStrLanguage.Farsi)),//صد هزار و نود و دو
+        Text(number.toWord()),//صد هزار و نود و دو
+
+        //تبدیل عدد به حروف انگلیسی - convert number to english letter
+        Text(NumberUtility.toWord(number, NumStrLanguage.English)),//one hundred thousand ninety two
+        Text(number.toWord(lang: NumStrLanguage.English)),//one hundred thousand ninety two
+
+        //رشته ورودی عددی هست یا نه - string is numeric or not
+        Text(NumberUtility.isNumeric(number).toString()),//true
+        Text(number.isNumeric().toString()),//true
+
+        //جدا سازی سه رقمی ارقام با ویرگول - separate an integer by comma for every three digits
+        Text(NumberUtility.seRagham(number)),//100,092
+        Text(number.seRagham()),//100,092
+
+        //جدا سازی سه رقمی ارقام با علامت انتخابی - separate an integer by custom character for every three digits
+        Text(NumberUtility.seRagham(number, separator: ".")),//100.092
+        Text(number.seRagham(separator: ".")),//100.092
+
+        //تبدیل اعداد انگلیسی به فارسی - convert english digit to persian digit
+        Text(NumberUtility.changeDigit(number, NumStrLanguage.Farsi)),//123456789 to ۱۲۳۴۵۶۷۸۹
+        Text(number.toEnglishDigit()),//123456789 to ۱۲۳۴۵۶۷۸۹
+
+        //تبدیل اعداد فارسی یا عربی به انگلیسی - convert persian/arabic digit to english digit
+        Text(NumberUtility.changeDigit(number, NumStrLanguage.English)),//۱۲۳۴۵۶۷۸۹ to 123456789
+        Text(number.toEnglishDigit()),//۱۲۳۴۵۶۷۸۹ to 123456789
+        
+        //جدا سازی اعداد از رشته - extract number from string
+        Text(NumberUtility.extractNumber("123456+.abc", NumStrLanguage.Farsi)),//۱۲۳۴۵۶
+        Text("123456+.abc".extractNumber()),//۱۲۳۴۵۶
+        
+        //جدا سازی اعداد از رشته - extract number from string
+        Text(NumberUtility.extractNumber("number123456اب ج -", NumStrLanguage.English)),//123456
+        Text("number123456اب ج -".extractNumber(toDigit: NumStrLanguage.English)),//123456
       ],
     )));
   }
