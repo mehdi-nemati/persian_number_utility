@@ -42,3 +42,7 @@
 ## [0.2.0] - release.
 
 * Extension method added 
+
+## [0.2.0] - date.
+
+* Shamsi date added 

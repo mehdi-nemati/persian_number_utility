@@ -77,6 +77,124 @@ class NumberUtility {
     number = inputString.replaceAll(RegExp(r'[^0-9]'), ''); // '23'
     return changeDigit(number, toDigit);
   }
+
+  /// بدست اوردن نام ماه شمسی
+  static String getPersianMonthLetter(String monthNumber) {
+    monthNumber = changeDigit(monthNumber, NumStrLanguage.English);
+    String outputText = "";
+    if (monthNumber.startsWith('0'))
+      monthNumber = monthNumber.replaceAll("0", "");
+    switch (monthNumber) {
+      case "1":
+        {
+          outputText = "فروردین";
+          break;
+        }
+      case "2":
+        {
+          outputText = "اردیبهشت";
+          break;
+        }
+      case "3":
+        {
+          outputText = "خرداد";
+          break;
+        }
+      case "4":
+        {
+          outputText = "تیر";
+          break;
+        }
+      case "5":
+        {
+          outputText = "مرداد";
+          break;
+        }
+      case "6":
+        {
+          outputText = "شهریور";
+          break;
+        }
+
+      case "7":
+        {
+          outputText = "مهر";
+          break;
+        }
+      case "8":
+        {
+          outputText = "ابان";
+          break;
+        }
+      case "9":
+        {
+          outputText = "اذر";
+          break;
+        }
+
+      case "10":
+        {
+          outputText = "دی";
+          break;
+        }
+      case "11":
+        {
+          outputText = "بهمن";
+          break;
+        }
+      case "12":
+        {
+          outputText = "اسفند";
+          break;
+        }
+    }
+    return outputText;
+  }
+
+  /// بدست اوردن نام روز
+  static String getPersianDayLetter(String dayNumber) {
+    dayNumber = changeDigit(dayNumber, NumStrLanguage.English);
+    String outputText = "";
+    if (dayNumber.startsWith('0')) dayNumber = dayNumber.replaceAll("0", "");
+    switch (dayNumber) {
+      case "1":
+        {
+          outputText = "دوشنبه";
+          break;
+        }
+      case "2":
+        {
+          outputText = "سه شنبه";
+          break;
+        }
+      case "3":
+        {
+          outputText = "چهارشنبه";
+          break;
+        }
+      case "4":
+        {
+          outputText = "پنج شنبه";
+          break;
+        }
+      case "5":
+        {
+          outputText = "جمعه";
+          break;
+        }
+      case "6":
+        {
+          outputText = "شنبه";
+          break;
+        }
+      case "7":
+        {
+          outputText = "یکشنبه";
+          break;
+        }
+    }
+    return outputText;
+  }
 }
 
 enum NumStrLanguage { Farsi, English }

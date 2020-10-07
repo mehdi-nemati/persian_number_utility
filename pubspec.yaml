@@ -1,6 +1,6 @@
 name: persian_number_utility
 description: A Flutter Package for convert number to English or Persian (Farsi) letter
-version: 0.2.0
+version: 0.2.1
 homepage: https://github.com/mehdi-nemati/persian_number_utility
 
 environment:

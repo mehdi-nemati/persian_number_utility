@@ -7,6 +7,7 @@ A Flutter Package for convert number to English or Persian (Farsi) letter and al
 See the [Dart packages](https://pub.dev/packages/persian_number_utility).
 
 ## Screenshot
+
 ![](screenshot.png)
 
 ## Usage
@@ -16,7 +17,7 @@ Add it to your pubspec.yaml file:
 ```yaml
 dependencies:
 
-persian_number_utility: ^0.2.0
+persian_number_utility: ^0.2.1
 ```
 
 In your library add the following import:
@@ -75,7 +76,7 @@ class NumToStr extends StatelessWidget {
         //تبدیل اعداد فارسی یا عربی به انگلیسی - convert persian/arabic digit to english digit
         Text(NumberUtility.changeDigit(number, NumStrLanguage.English)),//۱۲۳۴۵۶۷۸۹ to 123456789
         Text(number.toEnglishDigit()),//۱۲۳۴۵۶۷۸۹ to 123456789
-        
+
         //جدا سازی اعداد از رشته - extract number from string
         Text(NumberUtility.extractNumber("123456+.abc", NumStrLanguage.Farsi)),//۱۲۳۴۵۶
         Text("123456+.abc".extractNumber()),//۱۲۳۴۵۶
@@ -83,6 +84,19 @@ class NumToStr extends StatelessWidget {
         //جدا سازی اعداد از رشته - extract number from string
         Text(NumberUtility.extractNumber("number123456اب ج -", NumStrLanguage.English)),//123456
         Text("number123456اب ج -".extractNumber(toDigit: NumStrLanguage.English)),//123456
+
+        //_______________________ تبدیل تاریخ __________________________
+
+        //تبدیل تاریخ میلادی به تاریخ شمسی
+        Text(DateTime.now().toPersianDate()),//۱۳۹۹/۰۷/۱۶
+
+        //تبدیل تاریخ میلادی به تاریخ شمسی از متن
+        Text("2020-10-07T07:47:03.233Z".toPersinaDate()),//۱۳۹۹/۰۷/۱۶
+
+        //تبدیل تاریخ میلادی به متن تاریخ شمسی
+        Text(DateTime.now().toPersianDateStr(strDay: true,strMonth: true)),// شانزده مهر  ۱۳۹۹
+        Text(DateTime.now().toPersianDateStr(showDayStr: true))//چهارشنبه ۱۶ مهر  ۱۳۹۹
+
       ],
     )));
   }

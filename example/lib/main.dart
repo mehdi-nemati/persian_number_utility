@@ -64,6 +64,18 @@ class NumToStr extends StatelessWidget {
         //جدا سازی اعداد از رشته - extract number from string
         Text(NumberUtility.extractNumber("number123456اب ج -", NumStrLanguage.English)),//123456
         Text("number123456اب ج -".extractNumber(toDigit: NumStrLanguage.English)),//123456
+
+
+         //تبدیل تاریخ میلادی به تاریخ شمسی
+        Text(DateTime.now().toPersianDate()),//۱۳۹۹/۰۷/۱۶
+        
+        //تبدیل تاریخ میلادی به تاریخ شمسی از متن
+        Text("2020-10-07T07:47:03.233Z".toPersinaDate()),//۱۳۹۹/۰۷/۱۶
+
+        //تبدیل تاریخ میلادی به متن تاریخ شمسی
+        Text(DateTime.now().toPersianDateStr(strDay: true,strMonth: true)),// شانزده مهر  ۱۳۹۹
+        Text(DateTime.now().toPersianDateStr(showDayStr: true)),//چهارشنبه ۱۶ مهر  ۱۳۹۹
+
       ],
     )));
   }
