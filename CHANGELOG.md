@@ -43,6 +43,6 @@
 
 * Extension method added 
 
-## [0.2.0] - date.
+## [0.2.1] - date.
 
 * Shamsi date added 
