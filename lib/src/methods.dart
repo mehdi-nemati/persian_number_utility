@@ -82,8 +82,9 @@ class NumberUtility {
   static String getPersianMonthLetter(String monthNumber) {
     monthNumber = changeDigit(monthNumber, NumStrLanguage.English);
     String outputText = "";
-    if (monthNumber.startsWith('0'))
+    if (monthNumber.startsWith('0')) {
       monthNumber = monthNumber.replaceAll("0", "");
+    }
     switch (monthNumber) {
       case "1":
         {

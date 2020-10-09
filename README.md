@@ -1,8 +1,8 @@
 # A Flutter Package for convert number to English or Persian (Farsi) letter
 
-A Flutter Package for convert number to English or Persian (Farsi) letter and allow you to separate an integer by comma (or other) for every three digits and extract number from string
+A Flutter Package for convert number to English or Persian (Farsi) letter and allow you to separate an integer by comma (or other) for every three digits , extract number from string and convert Miladi date to Shamsi date
 
-پکیجی برای تبدیل اعداد به حروف فارسی یا انگلیسی ، همچنین برای جدا سازی سه رقمی ارقام و جداسازی ارقام از متن
+پکیجی برای تبدیل اعداد به حروف فارسی یا انگلیسی ، همچنین برای جدا سازی سه رقمی ارقام ، جداسازی ارقام از متن و تبدیل تاریخ شمسی به میلادی
 
 See the [Dart packages](https://pub.dev/packages/persian_number_utility).
 
@@ -17,7 +17,7 @@ Add it to your pubspec.yaml file:
 ```yaml
 dependencies:
 
-persian_number_utility: ^0.2.1
+persian_number_utility:
 ```
 
 In your library add the following import:

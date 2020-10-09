@@ -46,3 +46,7 @@
 ## [0.2.1] - date.
 
 * Shamsi date added 
+
+## [0.2.2] - date.
+
+* change in readme 
