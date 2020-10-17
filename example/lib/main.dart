@@ -70,12 +70,15 @@ class NumToStr extends StatelessWidget {
         Text(DateTime.now().toPersianDate()),//۱۳۹۹/۰۷/۱۶
         
         //تبدیل تاریخ میلادی به تاریخ شمسی از متن
-        Text("2020-10-07T07:47:03.233Z".toPersinaDate()),//۱۳۹۹/۰۷/۱۶
+        Text("2020-10-07T07:47:03.233Z".toPersianDigit()),//۱۳۹۹/۰۷/۱۶
 
         //تبدیل تاریخ میلادی به متن تاریخ شمسی
         Text(DateTime.now().toPersianDateStr(strDay: true,strMonth: true)),// شانزده مهر  ۱۳۹۹
         Text(DateTime.now().toPersianDateStr(showDayStr: true)),//چهارشنبه ۱۶ مهر  ۱۳۹۹
 
+        //صحیح بودن کد ملی ایرانیان - Checking the validity of the Iranian National Code
+        Text('1234567890'.isValidIranianNationalCode().toString()), // false
+        
       ],
     )));
   }

@@ -1,5 +1,7 @@
 import 'dateClass.dart';
+import 'enums.dart';
 import 'methods.dart';
+import 'validators/nationalCode.dart';
 
 extension StringExtensions on String {
   ///convert 123456789 to ۱۲۳۴۵۶۷۸۹
@@ -32,7 +34,9 @@ extension StringExtensions on String {
     return NumberUtility.isNumeric(this);
   }
 
-  ///تبدیل تاریخ از متن به تاریخ شمسی
+  @deprecated
+
+  /// استفاده شود toPersianDate به خاطر اشتباه نوشتاری در متد از
   String toPersinaDate({NumStrLanguage digitType = NumStrLanguage.Farsi}) {
     try {
       var inputStr = this.replaceAll("/", "-");
@@ -48,6 +52,29 @@ extension StringExtensions on String {
     } catch (e) {
       return "0000/00/00";
     }
+  }
+
+  ///تبدیل تاریخ از متن به تاریخ شمسی
+  String toPersianDate({NumStrLanguage digitType = NumStrLanguage.Farsi}) {
+    try {
+      var inputStr = this.replaceAll("/", "-");
+      var splitedStr = inputStr.split("-");
+      if (splitedStr[2].length == 1) {
+        splitedStr[2] = "0" + splitedStr[2];
+      }
+      if (splitedStr[1].length == 1) {
+        splitedStr[1] = "0" + splitedStr[1];
+      }
+      var changedToDate = DateTime.parse(splitedStr.join("-"));
+      return changedToDate.toPersianDate(digitType: digitType);
+    } catch (e) {
+      return "0000/00/00";
+    }
+  }
+
+  //صحیح بودن کد ملی ایرانیان
+  bool isValidIranianNationalCode() {
+    return NationalCode.isValidNationalCode(this);
   }
 }
 

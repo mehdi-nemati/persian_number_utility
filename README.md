@@ -1,8 +1,8 @@
-# A Flutter Package for convert number to English or Persian (Farsi) letter
+# A Flutter Package for convert number to English or Persian (Farsi) letter and convert Miladi to Persian Date(Jalali/Shamsi date)
 
-A Flutter Package for convert number to English or Persian (Farsi) letter and allow you to separate an integer by comma (or other) for every three digits , extract number from string and convert Miladi date to Shamsi date
+A Flutter Package for convert number to English or Persian (Farsi) letter and allow you to separate an integer by comma (or other) for every three digits , extract number from string and convert Miladi date to Shamsi date , Checking the validity of the Iranian National Code
 
-پکیجی برای تبدیل اعداد به حروف فارسی یا انگلیسی ، همچنین برای جدا سازی سه رقمی ارقام ، جداسازی ارقام از متن و تبدیل تاریخ شمسی به میلادی
+پکیجی برای تبدیل اعداد به حروف فارسی یا انگلیسی ، همچنین برای جدا سازی سه رقمی ارقام ، جداسازی ارقام از متن ، تبدیل تاریخ شمسی به میلادی و بررسی اعتبار کد ملی ایرانیان
 
 See the [Dart packages](https://pub.dev/packages/persian_number_utility).
 
@@ -17,7 +17,7 @@ Add it to your pubspec.yaml file:
 ```yaml
 dependencies:
 
-persian_number_utility:
+persian_number_utility: 0.2.3
 ```
 
 In your library add the following import:
@@ -85,6 +85,9 @@ class NumToStr extends StatelessWidget {
         Text(NumberUtility.extractNumber("number123456اب ج -", NumStrLanguage.English)),//123456
         Text("number123456اب ج -".extractNumber(toDigit: NumStrLanguage.English)),//123456
 
+        //صحیح بودن کد ملی ایرانیان - Checking the validity of the Iranian National Code
+        Text('1234567890'.isValidIranianNationalCode().toString()), // false
+
         //_______________________ تبدیل تاریخ __________________________
 
         //تبدیل تاریخ میلادی به تاریخ شمسی
@@ -96,7 +99,7 @@ class NumToStr extends StatelessWidget {
         //تبدیل تاریخ میلادی به متن تاریخ شمسی
         Text(DateTime.now().toPersianDateStr(strDay: true,strMonth: true)),// شانزده مهر  ۱۳۹۹
         Text(DateTime.now().toPersianDateStr(showDayStr: true))//چهارشنبه ۱۶ مهر  ۱۳۹۹
-
+        
       ],
     )));
   }
@@ -104,6 +107,10 @@ class NumToStr extends StatelessWidget {
 
 
 ```
+
+## حمایت از ما
+⭐️ در پایان اگه **خوشتون** اومده بود و **کارتون رو راه انداخت** بهش **ستاره** بدین و **لایکش** کنین 🙏
+
 
 ## Getting Started
 

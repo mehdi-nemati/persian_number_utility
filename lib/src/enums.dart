@@ -1,0 +1,1 @@
+enum NumStrLanguage { Farsi, English }

@@ -50,3 +50,8 @@
 ## [0.2.2] - date.
 
 * change in readme 
+
+## [0.2.3] - national code validator.
+
+* iranian national code validator
+* fix some bugs
