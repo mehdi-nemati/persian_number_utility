@@ -17,7 +17,7 @@ Add it to your pubspec.yaml file:
 ```yaml
 dependencies:
 
-persian_number_utility: ^0.2.4
+persian_number_utility: ^0.2.5
 ```
 
 In your library add the following import:
@@ -38,8 +38,6 @@ import 'package:persian_number_utility/persian_number_utility.dart'; //import
 class NumToStr extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    String number = "100092";//number here
-
     return Scaffold(
         body: Center(
             child: Column(
@@ -47,46 +45,41 @@ class NumToStr extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       mainAxisSize: MainAxisSize.max,
       children: <Widget>[
-        Text(number),//the number
 
         //تبدیل عدد به حروف فارسی - convert number to persian (farsi) letter
-        Text(NumberUtility.toWord(number, NumStrLanguage.Farsi)),//صد هزار و نود و دو
-        Text(number.toWord()),//صد هزار و نود و دو
+        Text("100092".toWord()),//صد هزار و نود و دو
 
         //تبدیل عدد به حروف انگلیسی - convert number to english letter
-        Text(NumberUtility.toWord(number, NumStrLanguage.English)),//one hundred thousand ninety two
-        Text(number.toWord(lang: NumStrLanguage.English)),//one hundred thousand ninety two
+        Text("100092".toWord(lang: NumStrLanguage.English)),//one hundred thousand ninety two
 
         //رشته ورودی عددی هست یا نه - string is numeric or not
-        Text(NumberUtility.isNumeric(number).toString()),//true
-        Text(number.isNumeric().toString()),//true
+        Text("100092".isNumeric().toString()),//true
 
         //جدا سازی سه رقمی ارقام با ویرگول - separate an integer by comma for every three digits
-        Text(NumberUtility.seRagham(number)),//100,092
-        Text(number.seRagham()),//100,092
+        Text("100092".seRagham()),//100,092
 
         //جدا سازی سه رقمی ارقام با علامت انتخابی - separate an integer by custom character for every three digits
-        Text(NumberUtility.seRagham(number, separator: ".")),//100.092
-        Text(number.seRagham(separator: ".")),//100.092
+        Text("100092".seRagham(separator: ".")),//100.092
 
         //تبدیل اعداد انگلیسی به فارسی - convert english digit to persian digit
-        Text(NumberUtility.changeDigit(number, NumStrLanguage.Farsi)),//123456789 to ۱۲۳۴۵۶۷۸۹
-        Text(number.toEnglishDigit()),//123456789 to ۱۲۳۴۵۶۷۸۹
+        Text("123456789".toPersianDigit()),//123456789 to ۱۲۳۴۵۶۷۸۹
 
         //تبدیل اعداد فارسی یا عربی به انگلیسی - convert persian/arabic digit to english digit
-        Text(NumberUtility.changeDigit(number, NumStrLanguage.English)),//۱۲۳۴۵۶۷۸۹ to 123456789
-        Text(number.toEnglishDigit()),//۱۲۳۴۵۶۷۸۹ to 123456789
+        Text("۱۲۳۴۵۶۷۸۹".toEnglishDigit()),//۱۲۳۴۵۶۷۸۹ to 123456789
 
         //جدا سازی اعداد از رشته - extract number from string
-        Text(NumberUtility.extractNumber("123456+.abc", NumStrLanguage.Farsi)),//۱۲۳۴۵۶
         Text("123456+.abc".extractNumber()),//۱۲۳۴۵۶
 
         //جدا سازی اعداد از رشته - extract number from string
-        Text(NumberUtility.extractNumber("number123456اب ج -", NumStrLanguage.English)),//123456
         Text("number123456اب ج -".extractNumber(toDigit: NumStrLanguage.English)),//123456
 
         //صحیح بودن کد ملی ایرانیان - Checking the validity of the Iranian National Code
         Text('1234567890'.isValidIranianNationalCode().toString()), // false
+
+        //صحیح بودن شماره موبایل ایرانیان - Checking the validity of the Iranian mobile number
+        Text('09353391994'.isValidIranianMobileNumber().toString()), // true
+        Text('+989353391994'.isValidIranianMobileNumber().toString()), // true
+        Text('00989353391994'.isValidIranianMobileNumber().toString()), // true
 
         //_______________________ تبدیل تاریخ __________________________
 
@@ -99,7 +92,7 @@ class NumToStr extends StatelessWidget {
         //تبدیل تاریخ میلادی به متن تاریخ شمسی
         Text(DateTime.now().toPersianDateStr(strDay: true,strMonth: true)),// شانزده مهر  ۱۳۹۹
         Text(DateTime.now().toPersianDateStr(showDayStr: true))//چهارشنبه ۱۶ مهر  ۱۳۹۹
-        
+
       ],
     )));
   }
@@ -109,8 +102,8 @@ class NumToStr extends StatelessWidget {
 ```
 
 ## حمایت از ما
-⭐️ در پایان اگه **خوشتون** اومده بود و **کارتون رو راه انداخت** بهش **ستاره** بدین و **لایکش** کنین 🙏
 
+⭐️ در پایان اگه **خوشتون** اومده بود و **کارتون رو راه انداخت** بهش **ستاره** بدین و **لایکش** کنین 🙏
 
 ## Getting Started
 

@@ -1,3 +1,5 @@
+import 'package:persian_number_utility/src/validators/regexValidators.dart';
+
 import 'dateClass.dart';
 import 'enums.dart';
 import 'methods.dart';
@@ -75,6 +77,11 @@ extension StringExtensions on String {
   //صحیح بودن کد ملی ایرانیان
   bool isValidIranianNationalCode() {
     return NationalCode.isValidNationalCode(this);
+  }
+
+  //صحیح بودن شماره موبایل ایرانیان
+  bool isValidIranianMobileNumber() {
+    return RegexValidators.isValidIranianMobileNumber(this);
   }
 }
 

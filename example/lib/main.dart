@@ -30,55 +30,54 @@ class NumToStr extends StatelessWidget {
       mainAxisSize: MainAxisSize.max,
       children: <Widget>[
         //تبدیل عدد به حروف فارسی - convert number to persian (farsi) letter
-        Text(NumberUtility.toWord(number, NumStrLanguage.Farsi)),//صد هزار و نود و دو
-        Text(number.toWord()),//صد هزار و نود و دو
+        Text(number.toWord()), //صد هزار و نود و دو
 
         //تبدیل عدد به حروف انگلیسی - convert number to english letter
-        Text(NumberUtility.toWord(number, NumStrLanguage.English)),//one hundred thousand ninety two
-        Text(number.toWord(lang: NumStrLanguage.English)),//one hundred thousand ninety two
+        Text(number.toWord(
+            lang: NumStrLanguage.English)), //one hundred thousand ninety two
 
         //رشته ورودی عددی هست یا نه - string is numeric or not
-        Text(NumberUtility.isNumeric(number).toString()),//true
-        Text(number.isNumeric().toString()),//true
+        Text(number.isNumeric().toString()), //true
 
         //جدا سازی سه رقمی ارقام با ویرگول - separate an integer by comma for every three digits
-        Text(NumberUtility.seRagham(number)),//100,092
-        Text(number.seRagham()),//100,092
+        Text(number.seRagham()), //100,092
 
         //جدا سازی سه رقمی ارقام با علامت انتخابی - separate an integer by custom character for every three digits
-        Text(NumberUtility.seRagham(number, separator: ".")),//100.092
-        Text(number.seRagham(separator: ".")),//100.092
+        Text(number.seRagham(separator: ".")), //100.092
 
         //تبدیل اعداد انگلیسی به فارسی - convert english digit to persian digit
-        Text(NumberUtility.changeDigit(number, NumStrLanguage.Farsi)),//123456789 to ۱۲۳۴۵۶۷۸۹
-        Text(number.toEnglishDigit()),//123456789 to ۱۲۳۴۵۶۷۸۹
+        Text(number.toEnglishDigit()), //123456789 to ۱۲۳۴۵۶۷۸۹
 
         //تبدیل اعداد فارسی یا عربی به انگلیسی - convert persian/arabic digit to english digit
-        Text(NumberUtility.changeDigit(number, NumStrLanguage.English)),//۱۲۳۴۵۶۷۸۹ to 123456789
-        Text(number.toEnglishDigit()),//۱۲۳۴۵۶۷۸۹ to 123456789
-        
-        //جدا سازی اعداد از رشته - extract number from string
-        Text(NumberUtility.extractNumber("123456+.abc", NumStrLanguage.Farsi)),//۱۲۳۴۵۶
-        Text("123456+.abc".extractNumber()),//۱۲۳۴۵۶
-        
-        //جدا سازی اعداد از رشته - extract number from string
-        Text(NumberUtility.extractNumber("number123456اب ج -", NumStrLanguage.English)),//123456
-        Text("number123456اب ج -".extractNumber(toDigit: NumStrLanguage.English)),//123456
+        Text(number.toEnglishDigit()), //۱۲۳۴۵۶۷۸۹ to 123456789
 
+        //جدا سازی اعداد از رشته - extract number from string
+        Text("123456+.abc".extractNumber()), //۱۲۳۴۵۶
 
-         //تبدیل تاریخ میلادی به تاریخ شمسی
-        Text(DateTime.now().toPersianDate()),//۱۳۹۹/۰۷/۱۶
-        
+        //جدا سازی اعداد از رشته - extract number from string
+        Text("number123456اب ج -"
+            .extractNumber(toDigit: NumStrLanguage.English)), //123456
+
+        //تبدیل تاریخ میلادی به تاریخ شمسی
+        Text(DateTime.now().toPersianDate()), //۱۳۹۹/۰۷/۱۶
+
         //تبدیل تاریخ میلادی به تاریخ شمسی از متن
-        Text("2020-10-07T07:47:03.233Z".toPersianDigit()),//۱۳۹۹/۰۷/۱۶
+        Text("2020-10-07T07:47:03.233Z".toPersianDigit()), //۱۳۹۹/۰۷/۱۶
 
         //تبدیل تاریخ میلادی به متن تاریخ شمسی
-        Text(DateTime.now().toPersianDateStr(strDay: true,strMonth: true)),// شانزده مهر  ۱۳۹۹
-        Text(DateTime.now().toPersianDateStr(showDayStr: true)),//چهارشنبه ۱۶ مهر  ۱۳۹۹
+        Text(DateTime.now().toPersianDateStr(
+            strDay: true, strMonth: true)), // شانزده مهر  ۱۳۹۹
+        Text(DateTime.now()
+            .toPersianDateStr(showDayStr: true)), //چهارشنبه ۱۶ مهر  ۱۳۹۹
 
         //صحیح بودن کد ملی ایرانیان - Checking the validity of the Iranian National Code
         Text('1234567890'.isValidIranianNationalCode().toString()), // false
-        
+
+        //بررسی صحیح بودن شماره موبایل ایرانیان - Checking the validity of the Iranian mobile number
+        Text('12345678901'.isValidIranianMobileNumber().toString()), // false
+        Text('09353391994'.isValidIranianMobileNumber().toString()), // true
+        Text('+989353391994'.isValidIranianMobileNumber().toString()), // true
+        Text('00989353391994'.isValidIranianMobileNumber().toString()) // true
       ],
     )));
   }
