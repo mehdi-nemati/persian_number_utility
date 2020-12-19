@@ -1,14 +1,13 @@
 # A Flutter Package for convert number to English or Persian (Farsi) letter and convert Miladi to Persian Date(Jalali/Shamsi date)
 
-A Flutter Package for convert number to English or Persian (Farsi) letter and allow you to separate an integer by comma (or other) for every three digits , extract number from string and convert Miladi date to Shamsi date , Checking the validity of the Iranian National Code
+A Flutter Package for convert number to English or Persian (Farsi) letter and allow you to separate an integer by comma (or other) for every three digits , extract number from string and convert Miladi date to Shamsi date , Checking the validity of the Iranian National Code and phone number
 
-پکیجی برای تبدیل اعداد به حروف فارسی یا انگلیسی ، همچنین برای جدا سازی سه رقمی ارقام ، جداسازی ارقام از متن ، تبدیل تاریخ شمسی به میلادی و بررسی اعتبار کد ملی ایرانیان
+پکیجی برای تبدیل اعداد به حروف فارسی یا انگلیسی ، همچنین برای جدا سازی سه رقمی ارقام ، جداسازی ارقام از متن ، تبدیل تاریخ شمسی به میلادی و بررسی اعتبار کد ملی و شماره موبایل ایرانیان
 
 See the [Dart packages](https://pub.dev/packages/persian_number_utility).
 
 ## Screenshot
-
-![](screenshot.png)
+![]( screenshot1.jpg) ![]( screenshot2.jpg)
 
 ## Usage
 
@@ -17,7 +16,7 @@ Add it to your pubspec.yaml file:
 ```yaml
 dependencies:
 
-persian_number_utility: ^0.2.5
+persian_number_utility: ^0.2.6
 ```
 
 In your library add the following import:
@@ -91,8 +90,16 @@ class NumToStr extends StatelessWidget {
 
         //تبدیل تاریخ میلادی به متن تاریخ شمسی
         Text(DateTime.now().toPersianDateStr(strDay: true,strMonth: true)),// شانزده مهر  ۱۳۹۹
-        Text(DateTime.now().toPersianDateStr(showDayStr: true))//چهارشنبه ۱۶ مهر  ۱۳۹۹
+        Text(DateTime.now().toPersianDateStr(showDayStr: true)),//چهارشنبه ۱۶ مهر  ۱۳۹۹
 
+        //نمایش اختلاف بین دو تاریخ به صورت خلاصه وار و متنی
+        Text(DateTime.now().add(Duration(seconds: -1)).getDifferenceDateString()),//لحظاتی پیش
+        Text(DateTime.now().add(Duration(seconds: -40)).getDifferenceDateString(aFewSecondsAgoText: "همین الان")),//همین الان
+        Text(DateTime.now().add(Duration(days: -6)).getDifferenceDateString()),//چند روز پیش
+        Text(DateTime.now().add(Duration(days: -1)).getDifferenceDateString()),//دیروز
+        Text(DateTime.now().add(Duration(days: -365)).getDifferenceDateString()),//سال پیش
+        Text(DateTime.now().add(Duration(days: -365)).getDifferenceDateString(lastYearText: "پارسال")),//پارسال
+        Text(DateTime.now().add(Duration(days: -78)).getDifferenceDateString())//چند ماه پیش
       ],
     )));
   }

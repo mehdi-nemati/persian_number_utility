@@ -2,6 +2,7 @@ import 'package:persian_number_utility/src/validators/regexValidators.dart';
 
 import 'dateClass.dart';
 import 'enums.dart';
+import 'differenceDate.dart';
 import 'methods.dart';
 import 'validators/nationalCode.dart';
 
@@ -89,6 +90,47 @@ extension PersianDateTimeExtensions on DateTime {
   ///تبدیل تاریخ میلادی به تاریخ شمسی
   String toPersianDate({NumStrLanguage digitType = NumStrLanguage.Farsi}) {
     return NumberUtility.changeDigit(PersianDate(this).toString(), digitType);
+  }
+
+  ///نمایش اختلاف بین دو تاریخ به صورت خلاصه وار و متنی
+  String getDifferenceDateString(
+      {int seconds = 60,
+      int minutes = 60,
+      int hours = 24,
+      int days = 7,
+      int weeks = 4,
+      int months = 12,
+      DateTime systemDatetime,
+      String aFewSecondsAgoText = "لحظاتی پیش",
+      String aFewMinutesAgoText = "دقایقی پیش",
+      String someHoursAgoText = "ساعاتی پیش",
+      String yesterdayText = "دیروز",
+      String aFewDaysAgoText = "چند روز پیش",
+      String lastWeekText = "هفته پیش",
+      String aFewWeeksAgoText = "چند هفته پیش",
+      String lastMonthText = "ماه پیش",
+      String aFewMonthsAgoText = "چند ماه پیش",
+      String lastYearText = "سال پیش",
+      String someYearsAgoText = "چند سال پیش"}) {
+    return DifferenceDate.getStringDate(this,
+        seconds: seconds,
+        minutes: minutes,
+        hours: hours,
+        days: days,
+        weeks: weeks,
+        months: months,
+        systemDatetime: systemDatetime,
+        aFewSecondsAgoText: aFewSecondsAgoText,
+        aFewMinutesAgoText: aFewMinutesAgoText,
+        someHoursAgoText: someHoursAgoText,
+        yesterdayText: yesterdayText,
+        aFewDaysAgoText: aFewDaysAgoText,
+        lastWeekText: lastWeekText,
+        aFewWeeksAgoText: aFewWeeksAgoText,
+        lastMonthText: lastMonthText,
+        aFewMonthsAgoText: aFewMonthsAgoText,
+        lastYearText: lastYearText,
+        someYearsAgoText: someYearsAgoText);
   }
 
   ///تبدیل تاریخ میلادی به نوشتاری شمسی
