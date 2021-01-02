@@ -61,3 +61,5 @@
 ## [0.2.5] - add Iranian mobile number validator.
 
 ## [0.2.6] - Show the difference between two dates in short text
+
+## [0.2.7] - Bank number validation

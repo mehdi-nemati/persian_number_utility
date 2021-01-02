@@ -4,6 +4,7 @@ import 'dateClass.dart';
 import 'enums.dart';
 import 'differenceDate.dart';
 import 'methods.dart';
+import 'validators/bankValidator.dart';
 import 'validators/nationalCode.dart';
 
 extension StringExtensions on String {
@@ -78,6 +79,11 @@ extension StringExtensions on String {
   //صحیح بودن کد ملی ایرانیان
   bool isValidIranianNationalCode() {
     return NationalCode.isValidNationalCode(this);
+  }
+
+  //صحیح بودن شماره کارت بانکی
+  bool isValidBankCardNumber() {
+    return BankValidator.verifyCardNumber(this);
   }
 
   //صحیح بودن شماره موبایل ایرانیان

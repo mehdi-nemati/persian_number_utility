@@ -72,6 +72,9 @@ class NumToStr extends StatelessWidget {
 
         //صحیح بودن کد ملی ایرانیان - Checking the validity of the Iranian National Code
         Text('1234567890'.isValidIranianNationalCode().toString()), // false
+        
+        //صحیح بودن شماره کارت بانکی - Bank number validation
+        Text('1232234543212345'.isValidBankCardNumber().toString()), // false
 
         //بررسی صحیح بودن شماره موبایل ایرانیان - Checking the validity of the Iranian mobile number
         Text('12345678901'.isValidIranianMobileNumber().toString()), // false
