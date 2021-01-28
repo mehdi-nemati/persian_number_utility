@@ -1,13 +1,14 @@
 # A Flutter Package for convert number to English or Persian (Farsi) letter and convert Miladi to Persian Date(Jalali/Shamsi date) and digits validator
 
-A Flutter Package for convert number to English or Persian (Farsi) letter and allow you to separate an integer by comma (or other) for every three digits , extract number from string and convert Miladi date to Shamsi date , Checking the validity of the Iranian National Code and bank number and phone number
+A Flutter Package for convert number to English or Persian (Farsi) letter and allow you to separate an integer by comma (or other) for every three digits , extract number from string and convert Miladi date to Shamsi date , Checking the validity of the Iranian National Code and bank number and phone number, convert price to Rial or Toman
 
-پکیجی برای تبدیل اعداد به حروف فارسی یا انگلیسی ، همچنین برای جدا سازی سه رقمی ارقام ، جداسازی ارقام از متن ، تبدیل تاریخ شمسی به میلادی و بررسی اعتبار کد ملی ، شماره کارت بانکی و شماره موبایل ایرانیان
+پکیجی برای تبدیل اعداد به حروف فارسی یا انگلیسی ، همچنین برای جدا سازی سه رقمی ارقام ، جداسازی ارقام از متن ، تبدیل تاریخ شمسی به میلادی و بررسی اعتبار کد ملی ، شماره کارت بانکی و شماره موبایل ایرانیان ، تبدیل قیمت به تومان و ریال
 
 See the [Dart packages](https://pub.dev/packages/persian_number_utility).
 
 ## Screenshot
-![]( screenshot1.jpg) ![]( screenshot2.jpg)
+
+![](1fere5tgr5.png) ![](2f4rete5t.png)
 
 ## Usage
 
@@ -16,7 +17,7 @@ Add it to your pubspec.yaml file:
 ```yaml
 dependencies:
 
-persian_number_utility: ^0.2.7
+persian_number_utility: ^0.2.8
 ```
 
 In your library add the following import:
@@ -82,6 +83,11 @@ class NumToStr extends StatelessWidget {
         Text('09353391994'.isValidIranianMobileNumber().toString()), // true
         Text('+989353391994'.isValidIranianMobileNumber().toString()), // true
         Text('00989353391994'.isValidIranianMobileNumber().toString()), // true
+
+        //تبدیل به تومان
+        Text('1200'.beToman()), // 12000
+        //تبدیل به ریال
+        Text('1200'.beRial()), // 120
 
         //_______________________ تبدیل تاریخ __________________________
 

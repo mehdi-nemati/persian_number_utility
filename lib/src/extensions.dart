@@ -90,6 +90,20 @@ extension StringExtensions on String {
   bool isValidIranianMobileNumber() {
     return RegexValidators.isValidIranianMobileNumber(this);
   }
+
+  //تبدیل به تومان - Convert price to Toman
+  String beToman() {
+    var strNumber = NumberUtility.extractNumber(this, NumStrLanguage.English);
+    var convertedNumber = int.parse(strNumber);
+    return (convertedNumber / 10).toString().replaceAll('.0', '');
+  }
+
+  //تبدیل به ریال - Convert price to Rial
+  String beRial() {
+    var strNumber = NumberUtility.extractNumber(this, NumStrLanguage.English);
+    var convertedNumber = int.parse(strNumber);
+    return (convertedNumber * 10).toString();
+  }
 }
 
 extension PersianDateTimeExtensions on DateTime {
