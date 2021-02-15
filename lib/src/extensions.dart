@@ -109,7 +109,10 @@ extension StringExtensions on String {
 extension PersianDateTimeExtensions on DateTime {
   ///تبدیل تاریخ میلادی به تاریخ شمسی
   String toPersianDate({NumStrLanguage digitType = NumStrLanguage.Farsi}) {
-    return NumberUtility.changeDigit(PersianDate(this).toString(), digitType);
+    PersianDate persianDate = PersianDate();
+    return NumberUtility.changeDigit(
+        persianDate.toJalali(this.year, this.month, this.day).toString(),
+        digitType);
   }
 
   ///نمایش اختلاف بین دو تاریخ به صورت خلاصه وار و متنی
