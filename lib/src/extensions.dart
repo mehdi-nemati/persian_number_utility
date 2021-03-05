@@ -123,7 +123,7 @@ extension PersianDateTimeExtensions on DateTime {
       int days = 7,
       int weeks = 4,
       int months = 12,
-      DateTime systemDatetime,
+      DateTime? systemDatetime,
       String aFewSecondsAgoText = "لحظاتی پیش",
       String aFewMinutesAgoText = "دقایقی پیش",
       String someHoursAgoText = "ساعاتی پیش",
