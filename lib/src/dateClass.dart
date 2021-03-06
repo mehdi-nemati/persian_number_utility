@@ -41,7 +41,7 @@ class PersianDate {
     return persionDate;
   }
 
-  jalaliToGregorian(int y, int m, int d, [String separator]) {
+  jalaliToGregorian(int y, int m, int d, [String? separator]) {
     int gY;
     if (y > 979) {
       gY = 1600;
