@@ -1,7 +1,7 @@
 class RegexValidators {
   ///بررسی صحیح بودن شماره موبایل ایرانیان
-  static bool isValidIranianMobileNumber(String inputString) {
-    if (inputString == null || inputString.isEmpty) {
+  static bool isValidIranianMobileNumber(String? inputString) {
+    if (inputString == null) {
       return false;
     }
     var regex = RegExp(

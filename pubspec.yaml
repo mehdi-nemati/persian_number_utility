@@ -1,6 +1,6 @@
 name: persian_number_utility
 description: A Flutter Package for convert number to English or Persian(Farsi) letter and convert Miladi to Persian Date(Jalali/Shamsi date) and digits validator
-version: 0.2.9
+version: 0.3.0
 homepage: https://github.com/mehdi-nemati/persian_number_utility
 
 environment:

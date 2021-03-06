@@ -67,3 +67,5 @@
 ## [0.2.8] - Convert price to Rial and Toman
 
 ## [0.2.9] - Fix bug
+
+## [0.3.0] - Migrate to null-safety.

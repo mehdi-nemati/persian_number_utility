@@ -1,7 +1,7 @@
 import '../extensions.dart';
 
 class NationalCode {
-  static bool isValidNationalCode(String inputString) {
+  static bool isValidNationalCode(String? inputString) {
     if (inputString == null || inputString.isEmpty) {
       return false;
     }

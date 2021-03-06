@@ -14,7 +14,7 @@ class NumberUtility {
     if (!isNumeric(number)) {
       return "";
     }
-    if (number == null || number == "") {
+    if (number == "") {
       return '';
     }
     switch (lang) {
@@ -30,7 +30,7 @@ class NumberUtility {
   }
 
   ///string is numeric or not
-  static bool isNumeric(String s) {
+  static bool isNumeric(String? s) {
     if (s == null) {
       return false;
     }

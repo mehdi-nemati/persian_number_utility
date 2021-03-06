@@ -41,7 +41,7 @@ class PersianDate {
     return persionDate;
   }
 
-  jalaliToGregorian(int y, int m, int d, [String? separator]) {
+  jalaliToGregorian(int y, int m, int d, [String separator = "/"]) {
     int gY;
     if (y > 979) {
       gY = 1600;
@@ -90,10 +90,7 @@ class PersianDate {
       gD -= montDays[i];
     }
     var gregorianDate;
-    if (separator == null)
-      gregorianDate = [gY, i, gD];
-    else
-      gregorianDate = "$gY$separator$i$separator$gD";
+    gregorianDate = "${gY}${separator}${i}${separator}${gD}";
     return gregorianDate;
   }
 }
