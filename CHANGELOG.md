@@ -69,3 +69,5 @@
 ## [0.2.9] - Fix bug
 
 ## [0.3.0] - Migrate to null-safety.
+
+## [0.3.1] - Fix bug validate Iranian mobile number 

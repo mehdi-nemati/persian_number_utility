@@ -17,7 +17,7 @@ Add it to your pubspec.yaml file:
 ```yaml
 dependencies:
 
-persian_number_utility: ^0.3.0
+persian_number_utility: ^0.3.1
 ```
 
 In your library add the following import:
