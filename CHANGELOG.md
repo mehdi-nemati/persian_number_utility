@@ -71,3 +71,5 @@
 ## [0.3.0] - Migrate to null-safety.
 
 ## [0.3.1] - Fix bug validate Iranian mobile number 
+
+## [0.3.2] - Afghani month names added
