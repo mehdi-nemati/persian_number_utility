@@ -87,7 +87,10 @@ class NumberUtility {
   }
 
   /// بدست اوردن نام ماه شمسی
-  static String getPersianMonthLetter(String monthNumber) {
+  static String getPersianMonthLetter(
+    String monthNumber, {
+    bool useAfghaniMonthName = false,
+  }) {
     monthNumber = changeDigit(monthNumber, NumStrLanguage.English);
     String outputText = "";
     if (monthNumber.startsWith('0')) {
@@ -96,64 +99,64 @@ class NumberUtility {
     switch (monthNumber) {
       case "1":
         {
-          outputText = "فروردین";
+          outputText = useAfghaniMonthName ? "حمل" : "فروردین";
           break;
         }
       case "2":
         {
-          outputText = "اردیبهشت";
+          outputText = useAfghaniMonthName ? "ثور" : "اردیبهشت";
           break;
         }
       case "3":
         {
-          outputText = "خرداد";
+          outputText = useAfghaniMonthName ? "جوزا" : "خرداد";
           break;
         }
       case "4":
         {
-          outputText = "تیر";
+          outputText = useAfghaniMonthName ? "سرطان" : "تیر";
           break;
         }
       case "5":
         {
-          outputText = "مرداد";
+          outputText = useAfghaniMonthName ? "اسد" : "مرداد";
           break;
         }
       case "6":
         {
-          outputText = "شهریور";
+          outputText = useAfghaniMonthName ? "سنبله" : "شهریور";
           break;
         }
 
       case "7":
         {
-          outputText = "مهر";
+          outputText = useAfghaniMonthName ? "میزان" : "مهر";
           break;
         }
       case "8":
         {
-          outputText = "ابان";
+          outputText = useAfghaniMonthName ? "عقرب" : "ابان";
           break;
         }
       case "9":
         {
-          outputText = "اذر";
+          outputText = useAfghaniMonthName ? "قوس" : "اذر";
           break;
         }
 
       case "10":
         {
-          outputText = "دی";
+          outputText = useAfghaniMonthName ? "جدی" : "دی";
           break;
         }
       case "11":
         {
-          outputText = "بهمن";
+          outputText = useAfghaniMonthName ? "دلو" : "بهمن";
           break;
         }
       case "12":
         {
-          outputText = "اسفند";
+          outputText = useAfghaniMonthName ? "حوت" : "اسفند";
           break;
         }
     }

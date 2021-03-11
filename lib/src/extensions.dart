@@ -157,13 +157,17 @@ extension PersianDateTimeExtensions on DateTime {
   }
 
   ///تبدیل تاریخ میلادی به نوشتاری شمسی
-  String toPersianDateStr(
-      {bool strYear = false,
-      bool strMonth = true,
-      bool strDay = false,
-      bool showDayStr = false,
-      String seprator = " ",
-      String monthString = " "}) {
+  String toPersianDateStr({
+    bool strYear = false,
+    bool strMonth = true,
+    bool strDay = false,
+    bool showDayStr = false,
+    String seprator = " ",
+    String monthString = " ",
+
+    ///نام ماه های افغانی مثل: حمل، ثور ....
+    bool useAfghaniMonthName = false,
+  }) {
     var input = this.toPersianDate();
     var splitedStr = input.split("/");
     String outputString = "";
@@ -176,7 +180,9 @@ extension PersianDateTimeExtensions on DateTime {
     outputString += seprator;
 
     outputString += strMonth
-        ? NumberUtility.getPersianMonthLetter(splitedStr[1]) + monthString
+        ? NumberUtility.getPersianMonthLetter(splitedStr[1],
+                useAfghaniMonthName: useAfghaniMonthName) +
+            monthString
         : splitedStr[1];
     outputString += seprator;
 
