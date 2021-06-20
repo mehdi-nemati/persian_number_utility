@@ -131,6 +131,130 @@ class EnWord {
 }
 
 class FaWord {
+  static final List<String> tensNames = [
+    "",
+    " ده و",
+    " بیست و",
+    " سی و",
+    " چهل و",
+    " پنجاه و",
+    " شصت و",
+    " هفتاد و",
+    " هشتاد و",
+    " نود و"
+  ];
+
+  static final List<String> numNames = [
+    "",
+    " یک",
+    " دو",
+    " سه",
+    " چهار",
+    " پنج",
+    " شش",
+    " هفت",
+    " هشت",
+    " نه",
+    " ده",
+    " یازده",
+    " دوازده",
+    " سیزده",
+    " چهارده",
+    " پانزده",
+    " شانزده",
+    " هفده",
+    " هجده",
+    " نوزده"
+  ];
+
+  static final List<String> thousandsNames = [
+    "",
+    " صد و",
+    " دویست و",
+    " سیصد و",
+    " چهارصد و",
+    " پانصد و",
+    " ششصد و",
+    " هفتصد و",
+    " هشتصد و",
+    " نهصد و"
+  ];
+
+  static final Map<String, int> tensMap = {
+    "": 0,
+    "ده": 10,
+    "بیست": 20,
+    "سی": 30,
+    "چهل": 40,
+    "پنجاه": 50,
+    "شصت": 60,
+    "هفتاد": 70,
+    "هشتاد": 80,
+    "نود": 90,
+  };
+
+  static final Map<String, int> numsMap = {
+    "": 0,
+    "یک": 1,
+    "دو": 2,
+    "سه": 3,
+    "چهار": 4,
+    "پنج": 5,
+    "شش": 6,
+    "هفت": 7,
+    "هشت": 8,
+    "نه": 9,
+    "ده": 10,
+    "یازده": 11,
+    "دوازده": 12,
+    "سیزده": 13,
+    "چهارده": 14,
+    "پانزده": 15,
+    "شانزده": 16,
+    "هفده": 17,
+    "هجده": 18,
+    "نوزده": 19,
+  };
+
+  static final Map<String, int> thousandsMap = {
+    "": 0,
+    "صد": 100,
+    "دویست": 200,
+    "سیصد": 300,
+    "چهارصد": 400,
+    "پانصد": 500,
+    "ششصد": 600,
+    "هفتصد": 700,
+    "هشتصد": 800,
+    "نهصد": 900,
+  };
+
+  static final Map<String, int> millionsMap = {
+    "هزار": 1000,
+    "میلیون": 1000000,
+    "میلیارد": 1000000000,
+    "تریلیون": 1000000000000,
+  };
+
+  static int toNumber(String word) {
+    List<String> words = word.split(" ");
+    words.removeWhere((element) => element == "و");
+    int value = 0;
+    for (var word in words) {
+      if (numsMap.containsKey(word))
+        value += numsMap[word] ?? 0;
+      else if (tensMap.containsKey(word))
+        value += tensMap[word] ?? 0;
+      else if (thousandsMap.containsKey(word))
+        value += thousandsMap[word] ?? 0;
+      else if (millionsMap.containsKey(word))
+        value += millionsMap[word] ?? 0;
+      else
+        throw Exception("Not correct format / Wrong language!");
+    }
+    return value;
+  }
+
   static String toWord(String inputNumber) {
     int number = int.parse(inputNumber);
     if (number == 0) {
@@ -210,54 +334,6 @@ class FaWord {
   }
 
   static String _convertLessThanOneThousand(int number) {
-    List<String> tensNames = [
-      "",
-      " ده و",
-      " بیست و",
-      " سی و",
-      " چهل و",
-      " پنجاه و",
-      " شصت و",
-      " هفتاد و",
-      " هشتاد و",
-      " نود و"
-    ];
-
-    List<String> numNames = [
-      "",
-      " یک",
-      " دو",
-      " سه",
-      " چهار",
-      " پنج",
-      " شش",
-      " هفت",
-      " هشت",
-      " نه",
-      " ده",
-      " یازده",
-      " دوازده",
-      " سیزده",
-      " چهارده",
-      " پانزده",
-      " شانزده",
-      " هفده",
-      " هجده",
-      " نوزده"
-    ];
-
-    List<String> thousandsNames = [
-      "",
-      " صد و",
-      " دویست و",
-      " سیصد و",
-      " چهارصد و",
-      " پانصد و",
-      " ششصد و",
-      " هفتصد و",
-      " هشتصد و",
-      " نهصد و"
-    ];
     String soFar;
     if (number % 100 < 20) {
       soFar = numNames[number % 100];

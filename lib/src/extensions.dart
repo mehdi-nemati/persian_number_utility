@@ -1,4 +1,4 @@
-import 'package:persian_number_utility/src/validators/regexValidators.dart';
+import 'validators/regexValidators.dart';
 
 import 'dateClass.dart';
 import 'enums.dart';
@@ -6,6 +6,7 @@ import 'differenceDate.dart';
 import 'methods.dart';
 import 'validators/bankValidator.dart';
 import 'validators/nationalCode.dart';
+
 
 extension StringExtensions on String {
   ///convert 123456789 to ۱۲۳۴۵۶۷۸۹
@@ -31,6 +32,11 @@ extension StringExtensions on String {
   ///convert number to string , like: 1000 to 'one thousand' or 'هزار'
   String toWord({NumStrLanguage lang = NumStrLanguage.Farsi}) {
     return NumberUtility.toWord(this, lang);
+  }
+
+  ///convert string to number , like: هزار to 1000
+  int toNumber({NumStrLanguage lang = NumStrLanguage.Farsi}) {
+    return NumberUtility.toNumber(this, lang);
   }
 
   ///string is numeric or not
