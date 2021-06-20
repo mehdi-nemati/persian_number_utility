@@ -237,22 +237,29 @@ class FaWord {
   };
 
   static int toNumber(String word) {
-    List<String> words = word.split(" ");
-    words.removeWhere((element) => element == "و");
-    int value = 0;
+    List<String> words = word.split(" و");
+    int finalValue = 0;
+    int tempValue = 0;
     for (var word in words) {
-      if (numsMap.containsKey(word))
-        value += numsMap[word] ?? 0;
-      else if (tensMap.containsKey(word))
-        value += tensMap[word] ?? 0;
-      else if (thousandsMap.containsKey(word))
-        value += thousandsMap[word] ?? 0;
-      else if (millionsMap.containsKey(word))
-        value += millionsMap[word] ?? 0;
-      else
-        throw Exception("Not correct format / Wrong language!");
+      List<String> temps = word.split(" ");
+      print(temps);
+      for (var item in temps) {
+        if (numsMap.containsKey(item))
+          tempValue += numsMap[item] ?? 0;
+        else if (tensMap.containsKey(item))
+          tempValue += tensMap[item] ?? 0;
+        else if (thousandsMap.containsKey(item))
+          tempValue += thousandsMap[item] ?? 0;
+        else if (millionsMap.containsKey(item)) {
+          tempValue *= millionsMap[item]!;
+          finalValue += tempValue;
+          tempValue = 0;
+        } else
+          throw Exception("Not correct format / Wrong language!");
+      }
     }
-    return value;
+    finalValue += tempValue;
+    return finalValue;
   }
 
   static String toWord(String inputNumber) {
