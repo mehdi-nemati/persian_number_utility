@@ -242,7 +242,6 @@ class FaWord {
     int tempValue = 0;
     for (var word in words) {
       List<String> temps = word.split(" ");
-      print(temps);
       for (var item in temps) {
         if (numsMap.containsKey(item))
           tempValue += numsMap[item] ?? 0;
