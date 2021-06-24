@@ -29,6 +29,20 @@ class NumberUtility {
     return _result.trim();
   }
 
+  /// Converts a string like 'هزار' to 1000
+  static int toNumber(String number, NumStrLanguage lang) {
+    int _result = 0;
+    switch (lang) {
+      case NumStrLanguage.English:
+
+        /// ToDo: implement for english
+        break;
+      case NumStrLanguage.Farsi:
+        return FaWord.toNumber(number);
+    }
+    return _result;
+  }
+
   ///string is numeric or not
   static bool isNumeric(String? s) {
     if (s == null) {
