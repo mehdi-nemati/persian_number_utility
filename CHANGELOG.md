@@ -75,3 +75,5 @@
 ## [0.3.2] - Afghani month names added
 
 ## [0.3.3] - Day and month two digits
+
+## [0.3.4] - Convert string to number

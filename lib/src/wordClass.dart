@@ -250,8 +250,10 @@ class FaWord {
         else if (thousandsMap.containsKey(item))
           tempValue += thousandsMap[item] ?? 0;
         else if (millionsMap.containsKey(item)) {
-          if (tempValue == 0) tempValue += millionsMap[item]!;
-          else tempValue *= millionsMap[item]!;
+          if (tempValue == 0)
+            tempValue += millionsMap[item]!;
+          else
+            tempValue *= millionsMap[item]!;
           finalValue += tempValue;
           tempValue = 0;
         } else

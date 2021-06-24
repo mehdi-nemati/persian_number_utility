@@ -8,7 +8,7 @@ See the [Dart packages](https://pub.dev/packages/persian_number_utility).
 
 ## Screenshot
 
-![](1fere5tgr12.png) ![](2f4rete5t.png)
+![](avftres.png) ![](aujfrew.png)
 
 ## Usage
 
@@ -17,7 +17,7 @@ Add it to your pubspec.yaml file:
 ```yaml
 dependencies:
 
-persian_number_utility: ^0.3.3
+persian_number_utility: ^0.3.4
 ```
 
 In your library add the following import:
@@ -48,6 +48,8 @@ class NumToStr extends StatelessWidget {
 
         //تبدیل عدد به حروف فارسی - convert number to persian (farsi) letter
         Text("100092".toWord()),//صد هزار و نود و دو
+
+        Text("صد و یک هزار و سیصد و نود و دو".toNumber().toString()),// 101392
 
         //تبدیل عدد به حروف انگلیسی - convert number to english letter
         Text("100092".toWord(lang: NumStrLanguage.English)),//one hundred thousand ninety two

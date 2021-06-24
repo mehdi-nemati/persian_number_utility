@@ -7,7 +7,6 @@ import 'methods.dart';
 import 'validators/bankValidator.dart';
 import 'validators/nationalCode.dart';
 
-
 extension StringExtensions on String {
   ///convert 123456789 to ۱۲۳۴۵۶۷۸۹
   String toPersianDigit() {
@@ -35,8 +34,8 @@ extension StringExtensions on String {
   }
 
   ///convert string to number , like: هزار to 1000
-  int toNumber({NumStrLanguage lang = NumStrLanguage.Farsi}) {
-    return NumberUtility.toNumber(this, lang);
+  int toNumber() {
+    return NumberUtility.toNumber(this);
   }
 
   ///string is numeric or not
