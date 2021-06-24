@@ -46,7 +46,7 @@ class NumToStr extends StatelessWidget {
         Text(number.seRagham(separator: ".")), //100.092
 
         //تبدیل اعداد انگلیسی به فارسی - convert english digit to persian digit
-        Text(number.toEnglishDigit()), //123456789 to ۱۲۳۴۵۶۷۸۹
+        Text(number.toPersianDigit()), //123456789 to ۱۲۳۴۵۶۷۸۹
 
         //تبدیل اعداد فارسی یا عربی به انگلیسی - convert persian/arabic digit to english digit
         Text(number.toEnglishDigit()), //۱۲۳۴۵۶۷۸۹ to 123456789
