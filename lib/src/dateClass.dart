@@ -1,7 +1,7 @@
 import 'dart:core';
 
 class PersianDate {
-  toJalali(int y, int m, int d) {
+  toJalali(int y, int m, int d, {bool twoDigits = false}) {
     var sumMonthDay = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334];
     var jY = 0;
     if (y > 1600) {
@@ -36,8 +36,12 @@ class PersianDate {
       jd = 1 + (days - 186) % 30;
     }
     var persionDate;
+    String monthString =
+        twoDigits ? jm.toString().padLeft(2, '0') : jm.toString();
+    String dayString =
+        twoDigits ? jd.toString().padLeft(2, '0') : jd.toString();
 
-    persionDate = "$jY/$jm/$jd";
+    persionDate = "$jY/$monthString/$dayString";
     return persionDate;
   }
 

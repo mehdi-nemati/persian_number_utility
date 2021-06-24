@@ -8,7 +8,7 @@ See the [Dart packages](https://pub.dev/packages/persian_number_utility).
 
 ## Screenshot
 
-![](1fere5tgr5.png) ![](2f4rete5t.png)
+![](1fere5tgr12.png) ![](2f4rete5t.png)
 
 ## Usage
 
@@ -17,7 +17,7 @@ Add it to your pubspec.yaml file:
 ```yaml
 dependencies:
 
-persian_number_utility: ^0.3.2
+persian_number_utility: ^0.3.3
 ```
 
 In your library add the following import:
@@ -92,10 +92,11 @@ class NumToStr extends StatelessWidget {
         //_______________________ تبدیل تاریخ __________________________
 
         //تبدیل تاریخ میلادی به تاریخ شمسی
-        Text(DateTime.now().toPersianDate()),//۱۳۹۹/۰۷/۱۶
+        Text(DateTime.now().toPersianDate()),//۱۳۹۹/۷/۰۶
+        Text(DateTime.now().toPersianDate(twoDigits: true)),//۱۳۹۹/۰۷/۰۶
 
         //تبدیل تاریخ میلادی به تاریخ شمسی از متن
-        Text("2020-10-07T07:47:03.233Z".toPersinaDate()),//۱۳۹۹/۰۷/۱۶
+        Text("2020-10-07T07:47:03.233Z".toPersinaDate()),//۱۳۹۹/۷/۶
 
         //تبدیل تاریخ میلادی به متن تاریخ شمسی
         Text(DateTime.now().toPersianDateStr(strDay: true,strMonth: true)),// شانزده مهر  ۱۳۹۹

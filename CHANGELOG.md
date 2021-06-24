@@ -73,3 +73,5 @@
 ## [0.3.1] - Fix bug validate Iranian mobile number 
 
 ## [0.3.2] - Afghani month names added
+
+## [0.3.3] - Day and month two digits
