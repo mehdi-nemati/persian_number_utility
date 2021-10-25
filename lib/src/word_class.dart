@@ -243,21 +243,23 @@ class FaWord {
     for (var word in words) {
       List<String> temps = word.split(" ");
       for (var item in temps) {
-        if (numsMap.containsKey(item))
+        if (numsMap.containsKey(item)) {
           tempValue += numsMap[item] ?? 0;
-        else if (tensMap.containsKey(item))
+        } else if (tensMap.containsKey(item)) {
           tempValue += tensMap[item] ?? 0;
-        else if (thousandsMap.containsKey(item))
+        } else if (thousandsMap.containsKey(item)) {
           tempValue += thousandsMap[item] ?? 0;
-        else if (millionsMap.containsKey(item)) {
-          if (tempValue == 0)
+        } else if (millionsMap.containsKey(item)) {
+          if (tempValue == 0) {
             tempValue += millionsMap[item]!;
-          else
+          } else {
             tempValue *= millionsMap[item]!;
+          }
           finalValue += tempValue;
           tempValue = 0;
-        } else
+        } else {
           throw Exception("Not correct format / Wrong language!");
+        }
       }
     }
     finalValue += tempValue;

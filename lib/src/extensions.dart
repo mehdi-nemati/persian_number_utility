@@ -1,11 +1,11 @@
-import 'validators/regexValidators.dart';
+import 'validators/regex_validators.dart';
 
-import 'dateClass.dart';
+import 'date_class.dart';
 import 'enums.dart';
-import 'differenceDate.dart';
+import 'difference_date.dart';
 import 'methods.dart';
-import 'validators/bankValidator.dart';
-import 'validators/nationalCode.dart';
+import 'validators/bank_validator.dart';
+import 'validators/national_code.dart';
 
 extension StringExtensions on String {
   ///convert 123456789 to ۱۲۳۴۵۶۷۸۹
@@ -43,12 +43,12 @@ extension StringExtensions on String {
     return NumberUtility.isNumeric(this);
   }
 
-  @deprecated
+  @Deprecated("استفاده شود toPersianDate به خاطر اشتباه نوشتاری در متد از")
 
   /// استفاده شود toPersianDate به خاطر اشتباه نوشتاری در متد از
   String toPersinaDate({NumStrLanguage digitType = NumStrLanguage.Farsi}) {
     try {
-      var inputStr = this.replaceAll("/", "-");
+      var inputStr = replaceAll("/", "-");
       var splitedStr = inputStr.split("-");
       if (splitedStr[2].length == 1) {
         splitedStr[2] = "0" + splitedStr[2];
@@ -66,7 +66,7 @@ extension StringExtensions on String {
   ///تبدیل تاریخ از متن به تاریخ شمسی
   String toPersianDate({NumStrLanguage digitType = NumStrLanguage.Farsi}) {
     try {
-      var inputStr = this.replaceAll("/", "-");
+      var inputStr = replaceAll("/", "-");
       var splitedStr = inputStr.split("-");
       if (splitedStr[2].length == 1) {
         splitedStr[2] = "0" + splitedStr[2];
@@ -109,6 +109,13 @@ extension StringExtensions on String {
     var convertedNumber = int.parse(strNumber);
     return (convertedNumber * 10).toString();
   }
+
+  //گرفتن نام بانک از روی شماره کارت،
+  // اعتبار سنجی شماره کارت در این متد انجام نمیشود
+  //حداقل رقم وارد شده 6 عدد میباشد
+  String getBankNameFromCardNumber() {
+    return NumberUtility.getBankNameFromCardNumber(this);
+  }
 }
 
 extension PersianDateTimeExtensions on DateTime {
@@ -118,9 +125,7 @@ extension PersianDateTimeExtensions on DateTime {
       bool twoDigits = false}) {
     PersianDate persianDate = PersianDate();
     return NumberUtility.changeDigit(
-        persianDate
-            .toJalali(this.year, this.month, this.day, twoDigits: twoDigits)
-            .toString(),
+        persianDate.toJalali(year, month, day, twoDigits: twoDigits).toString(),
         digitType);
   }
 
@@ -177,12 +182,12 @@ extension PersianDateTimeExtensions on DateTime {
     ///نام ماه های افغانی مثل: حمل، ثور ....
     bool useAfghaniMonthName = false,
   }) {
-    var input = this.toPersianDate();
+    var input = toPersianDate();
     var splitedStr = input.split("/");
     String outputString = "";
 
     outputString += showDayStr
-        ? NumberUtility.getPersianDayLetter(this.weekday.toString()) + seprator
+        ? NumberUtility.getPersianDayLetter(weekday.toString()) + seprator
         : "";
 
     outputString += strDay ? splitedStr[2].toWord() : splitedStr[2];

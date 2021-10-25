@@ -26,7 +26,7 @@ class PersianDate {
     jY += ((day.round() - 1) / 365).floor();
     if (day > 365) day = ((day - 1).round() % 365);
     int jm;
-    var jd;
+    int jd;
     int days = day.toInt();
     if (days < 186) {
       jm = 1 + (days ~/ 31);
@@ -35,7 +35,7 @@ class PersianDate {
       jm = 7 + ((days - 186) ~/ 30);
       jd = 1 + (days - 186) % 30;
     }
-    var persionDate;
+    String persionDate;
     String monthString =
         twoDigits ? jm.toString().padLeft(2, '0') : jm.toString();
     String dayString =
@@ -93,8 +93,8 @@ class PersianDate {
       if (gD <= montDays[i]) break;
       gD -= montDays[i];
     }
-    var gregorianDate;
-    gregorianDate = "${gY}${separator}${i}${separator}${gD}";
+    String gregorianDate;
+    gregorianDate = "$gY$separator$i$separator$gD";
     return gregorianDate;
   }
 }

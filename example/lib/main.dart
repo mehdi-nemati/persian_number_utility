@@ -80,7 +80,14 @@ class NumToStr extends StatelessWidget {
         Text('12345678901'.isValidIranianMobileNumber().toString()), // false
         Text('09353391994'.isValidIranianMobileNumber().toString()), // true
         Text('+989353391994'.isValidIranianMobileNumber().toString()), // true
-        Text('00989353391994'.isValidIranianMobileNumber().toString()) // true
+        Text('00989353391994'.isValidIranianMobileNumber().toString()), // true
+
+        //نمایش خلاصه وار تاریخ ورودی نسبت به تاریخ فعلی ؛ (اختلاف مقادیر و متون قابل تغییر می باشد
+        Text(DateTime.now().add(const Duration(days: -6)).getDifferenceDateString(),), //چند روز پیش
+        
+        //تبدیل به توامن یا ریال
+        Text('920'.beToman()), // 9200
+        Text('9200'.beRial()), // 920
       ],
     )));
   }

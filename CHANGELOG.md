@@ -77,3 +77,9 @@
 ## [0.3.3] - Day and month two digits
 
 ## [0.3.4] - Convert string to number
+
+## [1.1.0] - Add new feature
+- Bank name from card number
+- code formatting
+- change document
+- change example

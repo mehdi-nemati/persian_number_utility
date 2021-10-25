@@ -19,9 +19,7 @@ class DifferenceDate {
       String aFewMonthsAgoText = "چند ماه پیش",
       String lastYearText = "سال پیش",
       String someYearsAgoText = "چند سال پیش"}) {
-    if (systemDatetime == null) {
-      systemDatetime = DateTime.now();
-    }
+    systemDatetime ??= DateTime.now();
 
     final differenceInDays = systemDatetime.difference(inputDatetime).inDays;
     if (differenceInDays > days) {
