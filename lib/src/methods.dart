@@ -338,4 +338,21 @@ class NumberUtility {
         return '-';
     }
   }
+
+  /// جداسازی چهار رقم اعداد (استفاده معمول برای خوانا کردن شماره کارت)
+  static String charRagham(String inputNumber, {String separator = "-"}) {
+    String outputString = "";
+    var numberSplit = inputNumber.split('.');
+    inputNumber = numberSplit[0].replaceAll(separator, '');
+    for (var i = inputNumber.length; i > 0;) {
+      if (i > 4) {
+        outputString =
+            separator + inputNumber.substring(i - 4, i) + outputString;
+      } else {
+        outputString = inputNumber.substring(0, i) + outputString;
+      }
+      i = i - 4;
+    }
+    return outputString;
+  }
 }
