@@ -83,3 +83,5 @@
 - code formatting
 - change document
 - change example
+
+## [1.1.1] - Add new feature and fix bug

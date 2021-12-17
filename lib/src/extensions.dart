@@ -29,7 +29,7 @@ extension StringExtensions on String {
   }
 
   /// convert 6037991123456789 to 6037-9911-2345-6789
-  String charRagham({String separator = ","}) {
+  String charRagham({String separator = "-"}) {
     return NumberUtility.charRagham(this, separator: separator);
   }
 

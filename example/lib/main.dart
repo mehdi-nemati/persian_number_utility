@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:persian_number_utility/persian_number_utility.dart';
 
@@ -47,9 +45,6 @@ class NumToStr extends StatelessWidget {
         //جدا سازی سه رقمی ارقام با علامت انتخابی - separate an integer by custom character for every three digits
         Text(number.seRagham(separator: ".")), //100.092
 
-        // جداسازی چهار رقمی ارقام با علامت انتخابی (به طور معمول برای خوانا کردن شماره کارت استفاده می‌شود) - separate an integer by custom character for every three digits
-        Text("6037991123456789".charRagham()) // 6037-9911-2345-6789
-        
         //تبدیل اعداد انگلیسی به فارسی - convert english digit to persian digit
         Text(number.toPersianDigit()), //123456789 to ۱۲۳۴۵۶۷۸۹
 
@@ -88,8 +83,12 @@ class NumToStr extends StatelessWidget {
         Text('00989353391994'.isValidIranianMobileNumber().toString()), // true
 
         //نمایش خلاصه وار تاریخ ورودی نسبت به تاریخ فعلی ؛ (اختلاف مقادیر و متون قابل تغییر می باشد
-        Text(DateTime.now().add(const Duration(days: -6)).getDifferenceDateString(),), //چند روز پیش
-        
+        Text(
+          DateTime.now()
+              .add(const Duration(days: -6))
+              .getDifferenceDateString(),
+        ), //چند روز پیش
+
         //تبدیل به توامن یا ریال
         Text('920'.beToman()), // 9200
         Text('9200'.beRial()), // 920
