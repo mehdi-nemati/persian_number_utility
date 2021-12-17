@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:persian_number_utility/persian_number_utility.dart';
 
@@ -45,6 +47,9 @@ class NumToStr extends StatelessWidget {
         //جدا سازی سه رقمی ارقام با علامت انتخابی - separate an integer by custom character for every three digits
         Text(number.seRagham(separator: ".")), //100.092
 
+        // جداسازی چهار رقمی ارقام با علامت انتخابی (به طور معمول برای خوانا کردن شماره کارت استفاده می‌شود) - separate an integer by custom character for every three digits
+        Text("6037991123456789".charRagham()) // 6037-9911-2345-6789
+        
         //تبدیل اعداد انگلیسی به فارسی - convert english digit to persian digit
         Text(number.toPersianDigit()), //123456789 to ۱۲۳۴۵۶۷۸۹
 

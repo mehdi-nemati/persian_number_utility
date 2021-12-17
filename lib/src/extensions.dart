@@ -28,6 +28,11 @@ extension StringExtensions on String {
     return NumberUtility.seRagham(this, separator: separator);
   }
 
+  /// convert 6037991123456789 to 6037-9911-2345-6789
+  String charRagham({String separator = ","}) {
+    return NumberUtility.charRagham(this, separator: separator);
+  }
+
   ///convert number to string , like: 1000 to 'one thousand' or 'هزار'
   String toWord({NumStrLanguage lang = NumStrLanguage.Farsi}) {
     return NumberUtility.toWord(this, lang);
