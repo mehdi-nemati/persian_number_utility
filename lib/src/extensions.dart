@@ -121,6 +121,11 @@ extension StringExtensions on String {
   String getBankNameFromCardNumber() {
     return NumberUtility.getBankNameFromCardNumber(this);
   }
+
+  /// تبدیل حروف عربی و ... به حروف استاندارد فارسی
+  String fixPersianChars() {
+    return NumberUtility.fixPersianChars(this);
+  }
 }
 
 extension PersianDateTimeExtensions on DateTime {

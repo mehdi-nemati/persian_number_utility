@@ -355,4 +355,18 @@ class NumberUtility {
     }
     return outputString;
   }
+
+  /// تبدیل حروف عربی و ... به حروف استاندارد فارسی
+  static String fixPersianChars(String inputString) {
+    return inputString
+        .replaceAll("ﮎ", "ک")
+        .replaceAll("ﮏ", "ک")
+        .replaceAll("ﮐ", "ک")
+        .replaceAll("ﮑ", "ک")
+        .replaceAll("ك", "ک")
+        .replaceAll("ي", "ی")
+        .replaceAll(" ", " ")
+        .replaceAll("ھ", "ه")
+        .replaceAll("ئ", "ی");
+  }
 }

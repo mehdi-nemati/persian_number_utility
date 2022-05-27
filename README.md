@@ -8,7 +8,7 @@ See the [Dart packages](https://pub.dev/packages/persian_number_utility).
 
 ## Screenshot
 
-![](1wedssds.png) ![](2awedsdaw.png)
+![](1sdsdvdf.jpg) ![](2sdserrs.jpg)
 
 ## امکانات پکیج
 - [تبدیل عدد به حروف فارسی - Convert numbers to Persian letters](#تبدیل-عدد-به-حروف-فارسی)
@@ -28,6 +28,7 @@ See the [Dart packages](https://pub.dev/packages/persian_number_utility).
 - [تبدیل به تومان و ریال - Convert to Tomans and Rials](#تبدیل-به-تومان-و-ریال)
 - [اعتبار سنجی کارت بانکی - Bank card validation](#اعتبار-سنجی-کارت-بانکی)
 - [تشخیص نام بانک از شماره کارت بانکی - Recognize the name of the bank from the bank card number](#تشخیص-نام-بانک-از-شماره-کارت-بانکی)
+- [تبدیل حروف عربی به حروف استاندارد الفبای فارسی  - Convert Arabic letters to standard letters of the Persian](#تبدیل-حروف-غیر-استاندارد-به-حروف-استاندارد-الفبای-فارسی)
 
 
 
@@ -40,7 +41,7 @@ Add the following line to the pubspec.yaml file:
 ```yaml
 dependencies:
 
-persian_number_utility: ^1.1.1
+persian_number_utility: ^1.1.2
 ```
 
 خط زیر رو به ایمپورت های صفحه خود اضافه کنید - Add the following line to your page imports
@@ -175,6 +176,13 @@ Text('1232234543212345'.isValidBankCardNumber().toString()), // false
 Text('58921011...'.getBankNameFromCardNumber()), // بانک سپه
 Text('60379911...'.getBankNameFromCardNumber()), // بانک ملی
 Text('00000000...'.getBankNameFromCardNumber()), // -
+```
+
+#### تبدیل حروف غیر استاندارد به حروف استاندارد الفبای فارسی
+
+```dart
+Text('ئ ي ك ﮑ ﮐ ﮏ'.fixPersianChars()), //ی ی ک ک ک ک
+
 ```
 
 

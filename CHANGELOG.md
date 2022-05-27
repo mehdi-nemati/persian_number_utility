@@ -85,3 +85,5 @@
 - change example
 
 ## [1.1.1] - Add new feature and fix bug
+
+## [1.1.2] - Convert Arabic letters to standard letters of the Persian
