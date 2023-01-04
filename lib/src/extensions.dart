@@ -132,11 +132,41 @@ extension PersianDateTimeExtensions on DateTime {
   ///تبدیل تاریخ میلادی به تاریخ شمسی
   String toPersianDate(
       {NumStrLanguage digitType = NumStrLanguage.Farsi,
-      bool twoDigits = false}) {
+      bool twoDigits = true,
+      bool showTime = false,
+      String timeSeprator = " ",
+      bool changeDirectionShowTimw = true,
+      bool showTimeSecond = false}) {
     PersianDate persianDate = PersianDate();
-    return NumberUtility.changeDigit(
-        persianDate.toJalali(year, month, day, twoDigits: twoDigits).toString(),
-        digitType);
+    String time = "";
+    if (showTime) {
+      time =
+          "${hour.toString().padLeft(2, '0')}:${minute.toString().padLeft(2, '0')}";
+      if (showTimeSecond) {
+        time = "$time:${second.toString().padLeft(2, '0')}";
+      }
+      if (changeDirectionShowTimw) {
+        time = timeSeprator + time;
+      } else {
+        time = time + timeSeprator;
+      }
+    }
+
+    if (changeDirectionShowTimw) {
+      return NumberUtility.changeDigit(
+          persianDate
+                  .toJalali(year, month, day, twoDigits: twoDigits)
+                  .toString() +
+              time,
+          digitType);
+    } else {
+      return NumberUtility.changeDigit(
+          time +
+              persianDate
+                  .toJalali(year, month, day, twoDigits: twoDigits)
+                  .toString(),
+          digitType);
+    }
   }
 
   ///نمایش اختلاف بین دو تاریخ به صورت خلاصه وار و متنی

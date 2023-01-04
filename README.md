@@ -41,7 +41,7 @@ Add the following line to the pubspec.yaml file:
 ```yaml
 dependencies:
 
-persian_number_utility: ^1.1.2
+persian_number_utility: ^1.1.3
 ```
 
 خط زیر رو به ایمپورت های صفحه خود اضافه کنید - Add the following line to your page imports
@@ -109,8 +109,12 @@ Text("100092aaa".isNumeric().toString()),//false
 #### تبدیل تاریخ میلادی به شمسی
 
 ```dart
-Text(DateTime.now().toPersianDate()),//۱۳۹۹/۷/۶
-Text(DateTime.now().toPersianDate(twoDigits: true)),//۱۳۹۹/۰۷/۰۶
+Text(DateTime.now().toPersianDate()),//۱۳۹۹/۰۷/۰۶
+Text(DateTime.now().toPersianDate(twoDigits: false)),//۱۳۹۹/۷/۶
+Text(DateTime.now().toPersianDate(twoDigits: true,showTime: true,timeSeprator: ' - ')),//۱۳۹۹/۰۷/۰۶ - ۰۷:۳۹
+
+//اگه نیاز بود که زمان در سمت راست یا چپ متن قرار بگیرد
+Text(DateTime.now().toPersianDate(twoDigits: true,showTime: true,changeDirectionShowTimw: false)),//۰۷:۳۹ ۱۳۹۹/۰۷/۰۶ 
 ```
 
 #### تبدیل تاریخ میلادی به تاریخ شمسی از متن
