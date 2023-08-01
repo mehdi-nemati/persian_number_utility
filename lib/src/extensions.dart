@@ -6,6 +6,7 @@ import 'difference_date.dart';
 import 'methods.dart';
 import 'validators/bank_validator.dart';
 import 'validators/national_code.dart';
+import 'package:flutter/material.dart';
 
 extension StringExtensions on String {
   ///convert 123456789 to ۱۲۳۴۵۶۷۸۹
@@ -13,9 +14,29 @@ extension StringExtensions on String {
     return NumberUtility.changeDigit(this, NumStrLanguage.Farsi);
   }
 
+// مقدار textFeild موقع تایپ عداد به فارسی تبدیل کنید
+  TextEditingValue valueToPersianDigit() {
+    var number = toPersianDigit();
+
+    return TextEditingValue(
+      text: number,
+      selection: TextSelection.collapsed(offset: number.length),
+    );
+  }
+
   ///convert ۱۲۳۴۵۶۷۸۹ to 123456789
   String toEnglishDigit() {
     return NumberUtility.changeDigit(this, NumStrLanguage.English);
+  }
+
+// مقدار textFeild موقع تایپ عداد به انگلیسی تبدیل کنید
+  TextEditingValue valueFarsiNumberToEnglish() {
+    var number = toEnglishDigit();
+
+    return TextEditingValue(
+      text: number,
+      selection: TextSelection.collapsed(offset: number.length),
+    );
   }
 
   ///extract number from string; abc123456789xyz to ۱۲۳۴۵۶۷۸۹  Or  ابپ۱۲۳۴۵۶۷۸۹ن to 123456789
