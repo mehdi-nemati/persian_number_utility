@@ -11,24 +11,30 @@ See the [Dart packages](https://pub.dev/packages/persian_number_utility).
 ![](1sdsdvdf.jpg) ![](2sdserrs.jpg)
 
 ## امکانات پکیج
-- [تبدیل عدد به حروف فارسی - Convert numbers to Persian letters](#تبدیل-عدد-به-حروف-فارسی)
-- [تبدیل عدد به حروف انگلیسی - Convert numbers to English letters](#تبدیل-عدد-به-حروف-انگلیسی)
-- [تبدیل حروف به عدد - Convert letters to numbers](#تبدیل-حروف-به-عدد)
-- [جدا سازی سه رقمی ارقام - Three-digit separation of digits](#جدا-سازی-سه-رقمی-ارقام)
-- [جدا سازی چهار رقمی ارقام - Four-digit separation of digits](#جدا-سازی-چهار-رقمی-ارقام)
-- [جدا سازی اعداد از رشته - Separate numbers from strings](#جدا-سازی-اعداد-از-رشته)
-- [تبدیل اعداد از انگلیسی به فارسی و بالعکس - Convert digits from English to Persian and vice versa](#تبدیل-اعداد-از-انگلیسی-به-فارسی-و-بالعکس)
-- [تشخیص عددی بودن متن - Recognize the numerical nature of the text](#تشخیص-عددی-بودن-متن)
-- [تبدیل تاریخ میلادی به شمسی - Convert Gregorian date to Shamsi date](#تبدیل-تاریخ-میلادی-به-شمسی)
-- [تبدیل تاریخ میلادی به تاریخ شمسی از متن - Convert Gregorian date to Shamsi date from text](#تبدیل-تاریخ-میلادی-به-تاریخ-شمسی-از-متن)
-- [تبدیل تاریخ میلادی به تاریخ متنی شمسی - Convert Gregorian date to Shamsi textual date](#تبدیل-تاریخ-میلادی-به-تاریخ-متنی-شمسی)
-- [نمایش خلاصه وار تاریخ نسبت به تاریخ فعلی - Show date briefly compared to current date](#نمایش-خلاصه-وار-تاریخ-نسبت-به-تاریخ-فعلی)
-- [اعتبارسنجی کد ملی ایرانیان - Validation of Iranian National Code](#اعتبارسنجی-کد-ملی-ایرانیان)
-- [اعتبار سنجی شماره موبایل ایرانیان - Validation of Iranian mobile number](#اعتبار-سنجی-شماره-موبایل-ایرانیان)
-- [تبدیل به تومان و ریال - Convert to Tomans and Rials](#تبدیل-به-تومان-و-ریال)
-- [اعتبار سنجی کارت بانکی - Bank card validation](#اعتبار-سنجی-کارت-بانکی)
-- [تشخیص نام بانک از شماره کارت بانکی - Recognize the name of the bank from the bank card number](#تشخیص-نام-بانک-از-شماره-کارت-بانکی)
-- [تبدیل حروف عربی به حروف استاندارد الفبای فارسی  - Convert Arabic letters to standard letters of the Persian](#تبدیل-حروف-غیر-استاندارد-به-حروف-استاندارد-الفبای-فارسی)
+- [A Flutter Package for convert number to English or Persian (Farsi) letter and convert Miladi to Persian Date(Jalali/Shamsi date) and digits validator](#a-flutter-package-for-convert-number-to-english-or-persian-farsi-letter-and-convert-miladi-to-persian-datejalalishamsi-date-and-digits-validator)
+  - [Screenshot](#screenshot)
+  - [امکانات پکیج](#امکانات-پکیج)
+  - [طریقه استفاده - Usage](#طریقه-استفاده---usage)
+      - [تبدیل عدد به حروف فارسی](#تبدیل-عدد-به-حروف-فارسی)
+      - [تبدیل عدد به حروف انگلیسی](#تبدیل-عدد-به-حروف-انگلیسی)
+      - [تبدیل عدد textField به حروف فارسی و انگلیسی](#تبدیل-عدد-textfield-به-حروف-فارسی-و-انگلیسی)
+      - [تبدیل حروف به عدد](#تبدیل-حروف-به-عدد)
+      - [جدا سازی سه رقمی ارقام](#جدا-سازی-سه-رقمی-ارقام)
+      - [جدا سازی چهار رقمی ارقام](#جدا-سازی-چهار-رقمی-ارقام)
+      - [جدا سازی اعداد از رشته](#جدا-سازی-اعداد-از-رشته)
+      - [تبدیل اعداد از انگلیسی به فارسی و بالعکس](#تبدیل-اعداد-از-انگلیسی-به-فارسی-و-بالعکس)
+      - [تشخیص عددی بودن متن](#تشخیص-عددی-بودن-متن)
+      - [تبدیل تاریخ میلادی به شمسی](#تبدیل-تاریخ-میلادی-به-شمسی)
+      - [تبدیل تاریخ میلادی به تاریخ شمسی از متن](#تبدیل-تاریخ-میلادی-به-تاریخ-شمسی-از-متن)
+      - [تبدیل تاریخ میلادی به تاریخ متنی شمسی](#تبدیل-تاریخ-میلادی-به-تاریخ-متنی-شمسی)
+      - [اعتبارسنجی کد ملی ایرانیان](#اعتبارسنجی-کد-ملی-ایرانیان)
+      - [اعتبار سنجی شماره موبایل ایرانیان](#اعتبار-سنجی-شماره-موبایل-ایرانیان)
+      - [نمایش خلاصه وار تاریخ نسبت به تاریخ فعلی](#نمایش-خلاصه-وار-تاریخ-نسبت-به-تاریخ-فعلی)
+      - [تبدیل به تومان و ریال](#تبدیل-به-تومان-و-ریال)
+      - [اعتبار سنجی کارت بانکی](#اعتبار-سنجی-کارت-بانکی)
+      - [تشخیص نام بانک از شماره کارت بانکی](#تشخیص-نام-بانک-از-شماره-کارت-بانکی)
+      - [تبدیل حروف غیر استاندارد به حروف استاندارد الفبای فارسی](#تبدیل-حروف-غیر-استاندارد-به-حروف-استاندارد-الفبای-فارسی)
+  - [حمایت از ما](#حمایت-از-ما)
 
 
 
@@ -63,6 +69,16 @@ Text("100092".toWord()),//صد هزار و نود و دو
 
 ```dart
 Text("100092".toWord(lang: NumStrLanguage.English)),//one hundred thousand ninety two
+```
+
+#### تبدیل عدد textField به حروف فارسی و انگلیسی
+
+```dart
+TextField(
+   onChanged: (value) {
+      controller.value = value.valueToPersianDigit();
+   }
+)
 ```
 
 
