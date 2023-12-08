@@ -89,3 +89,5 @@
 ## [1.1.2] - Convert Arabic letters to standard letters of the Persian
 
 ## [1.1.3] - َShow time in toPersianDate function
+
+## [1.1.4] - Iranian postal code validator.

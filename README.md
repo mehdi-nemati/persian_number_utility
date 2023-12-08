@@ -29,7 +29,7 @@ See the [Dart packages](https://pub.dev/packages/persian_number_utility).
 - [اعتبار سنجی کارت بانکی - Bank card validation](#اعتبار-سنجی-کارت-بانکی)
 - [تشخیص نام بانک از شماره کارت بانکی - Recognize the name of the bank from the bank card number](#تشخیص-نام-بانک-از-شماره-کارت-بانکی)
 - [تبدیل حروف عربی به حروف استاندارد الفبای فارسی  - Convert Arabic letters to standard letters of the Persian](#تبدیل-حروف-غیر-استاندارد-به-حروف-استاندارد-الفبای-فارسی)
-
+- [اعتبارسنجی کد پستی ایرانیان - Validation of Iranian Postal Code](#اعتبارسنجی-کد-پستی-ایرانیان)
 
 
 ## طریقه استفاده - Usage
@@ -41,7 +41,7 @@ Add the following line to the pubspec.yaml file:
 ```yaml
 dependencies:
 
-persian_number_utility: ^1.1.3
+persian_number_utility: ^1.1.4
 ```
 
 خط زیر رو به ایمپورت های صفحه خود اضافه کنید - Add the following line to your page imports
@@ -187,6 +187,13 @@ Text('00000000...'.getBankNameFromCardNumber()), // -
 ```dart
 Text('ئ ي ك ﮑ ﮐ ﮏ'.fixPersianChars()), //ی ی ک ک ک ک
 
+```
+
+
+#### اعتبارسنجی کد پستی ایرانیان
+
+```dart
+Text('5955846418'.isValidIranianPostalCode().toString()), // true
 ```
 
 

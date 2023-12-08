@@ -101,6 +101,11 @@ extension StringExtensions on String {
     return RegexValidators.isValidIranianMobileNumber(this);
   }
 
+  //صحیح بودن کد پستی ایرانیان
+  bool isValidIranianPostalCode() {
+    return RegexValidators.isValidIranianPostalCode(this);
+  }
+
   //تبدیل به تومان - Convert price to Toman
   String beToman() {
     var strNumber = NumberUtility.extractNumber(this, NumStrLanguage.English);
