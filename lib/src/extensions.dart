@@ -113,6 +113,13 @@ extension StringExtensions on String {
     return (convertedNumber / 10).toString().replaceAll('.0', '');
   }
 
+   // تبدیل به تومان به صورت رند شده - Convert price to Toman and rounded
+  String beTomanRounded() {
+    var strNumber = NumberUtility.extractNumber(this, NumStrLanguage.English);
+    var convertedNumber = int.parse(strNumber);
+    return (convertedNumber / 10).round().toString();
+  }
+
   //تبدیل به ریال - Convert price to Rial
   String beRial() {
     var strNumber = NumberUtility.extractNumber(this, NumStrLanguage.English);
