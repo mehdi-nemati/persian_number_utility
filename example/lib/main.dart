@@ -75,6 +75,8 @@ class NumToStr extends StatelessWidget {
 
         //صحیح بودن شماره کارت بانکی - Bank number validation
         Text('1232234543212345'.isValidBankCardNumber().toString()), // false
+        //صحیح بودن شماره شبا بانکی - sheba Bank number validation
+        Text('IR111111111111111111111111'.isValidBankShebaNumber().toString()), // false
 
         //بررسی صحیح بودن شماره موبایل ایرانیان - Checking the validity of the Iranian mobile number
         Text('12345678901'.isValidIranianMobileNumber().toString()), // false

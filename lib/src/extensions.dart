@@ -96,6 +96,11 @@ extension StringExtensions on String {
     return BankValidator.verifyCardNumber(this);
   }
 
+  //صحیح بودن شماره شبا بانکی
+  bool isValidBankShebaNumber() {
+    return BankValidator.verifyShebaNumber(this);
+  }
+
   //صحیح بودن شماره موبایل ایرانیان
   bool isValidIranianMobileNumber() {
     return RegexValidators.isValidIranianMobileNumber(this);

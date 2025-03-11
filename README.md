@@ -28,6 +28,7 @@ See the [Dart packages](https://pub.dev/packages/persian_number_utility).
 - [تبدیل به تومان و ریال - Convert to Tomans and Rials](#تبدیل-به-تومان-و-ریال)
 - [اعتبار سنجی کارت بانکی - Bank card validation](#اعتبار-سنجی-کارت-بانکی)
 - [تشخیص نام بانک از شماره کارت بانکی - Recognize the name of the bank from the bank card number](#تشخیص-نام-بانک-از-شماره-کارت-بانکی)
+- [اعتبار سنجی شماره شبا بانکی - Bank account IBAN validation](#اعتبار-سنجی-شماره-شبا-بانکی)
 - [تبدیل حروف عربی به حروف استاندارد الفبای فارسی  - Convert Arabic letters to standard letters of the Persian](#تبدیل-حروف-غیر-استاندارد-به-حروف-استاندارد-الفبای-فارسی)
 - [اعتبارسنجی کد پستی ایرانیان - Validation of Iranian Postal Code](#اعتبارسنجی-کد-پستی-ایرانیان)
 
@@ -180,6 +181,11 @@ Text('1232234543212345'.isValidBankCardNumber().toString()), // false
 Text('58921011...'.getBankNameFromCardNumber()), // بانک سپه
 Text('60379911...'.getBankNameFromCardNumber()), // بانک ملی
 Text('00000000...'.getBankNameFromCardNumber()), // -
+```
+#### اعتبار سنجی شماره شبا بانکی
+
+```dart
+Text('IR111111111111111111111111'.isValidBankShebaNumber().toString()), // false
 ```
 
 #### تبدیل حروف غیر استاندارد به حروف استاندارد الفبای فارسی
