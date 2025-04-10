@@ -94,3 +94,6 @@
 
 ## [1.1.5]
 - String is contains digits
+
+## [1.1.6]
+- Bank account IBAN validation
