@@ -21,4 +21,21 @@ class BankValidator {
     }
     return sumOfItems % 10 == 0;
   }
+
+  static bool verifyShebaNumber(String inputString) {
+    bool startsWithIR = inputString.toLowerCase().contains('ir');
+    bool isShebaSizeWrong =
+        startsWithIR ? inputString.length != 26 : inputString.length != 24;
+    if (isShebaSizeWrong) return false;
+
+    String part1 = inputString.substring(startsWithIR ? 5 : 3);
+
+    String part2 =
+        inputString.replaceFirst(startsWithIR ? 'IR' : '', '1827').substring(0, 7);
+
+    String ibanNumber = part1 + part2;
+
+    BigInt ibanInt = BigInt.parse(ibanNumber);
+    return ibanInt % BigInt.from(97) == BigInt.from(10);
+  }
 }
