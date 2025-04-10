@@ -91,3 +91,6 @@
 ## [1.1.3] - َShow time in toPersianDate function
 
 ## [1.1.4] - Iranian postal code validator.
+
+## [1.1.5]
+- String is contains digits

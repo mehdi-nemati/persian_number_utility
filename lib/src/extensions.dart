@@ -48,6 +48,11 @@ extension StringExtensions on String {
     return NumberUtility.isNumeric(this);
   }
 
+  ///string is contains digits
+  bool isContainDigits() {
+    return NumberUtility.isContainDigits(this);
+  }
+
   @Deprecated("استفاده شود toPersianDate به خاطر اشتباه نوشتاری در متد از")
 
   /// استفاده شود toPersianDate به خاطر اشتباه نوشتاری در متد از

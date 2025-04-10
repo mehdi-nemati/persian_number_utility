@@ -42,6 +42,14 @@ class NumberUtility {
     return double.tryParse(s) != null;
   }
 
+  ///string is contains digits
+  static bool isContainDigits(String? s) {
+    if (s == null) {
+      return false;
+    }
+    return extractNumber(s, NumStrLanguage.English) != "";
+  }
+
   ///convert 123456789 to 123,456,789
   static String seRagham(String number, {String separator = ","}) {
     String str = "";

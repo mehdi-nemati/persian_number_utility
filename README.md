@@ -30,6 +30,7 @@ See the [Dart packages](https://pub.dev/packages/persian_number_utility).
 - [تشخیص نام بانک از شماره کارت بانکی - Recognize the name of the bank from the bank card number](#تشخیص-نام-بانک-از-شماره-کارت-بانکی)
 - [تبدیل حروف عربی به حروف استاندارد الفبای فارسی  - Convert Arabic letters to standard letters of the Persian](#تبدیل-حروف-غیر-استاندارد-به-حروف-استاندارد-الفبای-فارسی)
 - [اعتبارسنجی کد پستی ایرانیان - Validation of Iranian Postal Code](#اعتبارسنجی-کد-پستی-ایرانیان)
+- [تشخیص وجود عدد در رشته - String is contains digits](#تشخیص-وجود-عدد-در-رشته)
 
 
 ## طریقه استفاده - Usage
@@ -196,6 +197,13 @@ Text('ئ ي ك ﮑ ﮐ ﮏ'.fixPersianChars()), //ی ی ک ک ک ک
 Text('5955846418'.isValidIranianPostalCode().toString()), // true
 ```
 
+
+#### تشخیص وجود عدد در رشته
+
+```dart
+Text('abcdefghj'.isContainDigits().toString()), // false
+Text('abcdefghj3'.isContainDigits().toString()), // true
+```
 
 
 ## حمایت از ما
