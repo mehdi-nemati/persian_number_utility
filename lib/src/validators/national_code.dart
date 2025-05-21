@@ -1,25 +1,26 @@
-import '../extensions.dart';
+extension StringExtension on String {
+  bool get isNumeric => RegExp(r'^\d{10}\$').hasMatch(this);
+
+  bool get hasAllSameDigits => RegExp(r'^(\d)\1{9}\$').hasMatch(this);
+}
 
 class NationalCode {
-  static bool isValidNationalCode(String? inputString) {
-    if (inputString == null || inputString.isEmpty) {
-      return false;
-    }
-    inputString = inputString.padLeft(10, '0');
+  static bool isValidNationalCode(String? input) {
+    if (input == null || input.isEmpty) return false;
 
-    if (inputString.length != 10 && !inputString.isNumeric()) {
-      return false;
-    }
+    String code = input.padLeft(10, '0');
 
-    var nationalCodeLength = 10;
-    var sum = 0;
-    for (var i = 0; i < inputString.length - 1; i++) {
-      sum += int.parse(inputString[i]) * nationalCodeLength--;
+    if (!code.isNumeric || code.hasAllSameDigits) return false;
+
+    int sum = 0;
+    for (int i = 0; i < 9; i++) {
+      sum += int.parse(code[i]) * (10 - i);
     }
 
-    var remainder = sum % 11;
-    var controlNumber = int.parse(inputString[9]);
-    return remainder < 2 && controlNumber == remainder ||
-        remainder >= 2 && controlNumber == 11 - remainder;
+    int checkDigit = int.parse(code[9]);
+    int remainder = sum % 11;
+
+    return (remainder < 2 && checkDigit == remainder) ||
+           (remainder >= 2 && checkDigit == 11 - remainder);
   }
 }
